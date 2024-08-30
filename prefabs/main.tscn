@@ -342,7 +342,6 @@ position = Vector2(3840, 424)
 
 [node name="enemy" parent="enemies" instance=ExtResource("17_upxgn")]
 position = Vector2(2056, 4272)
-scale = Vector2(18.92, 18.92)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(9824, -4584)
