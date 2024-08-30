@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://ba8jrabottlkk"]
+
+[ext_resource type="Script" path="res://scripts/chortfinal.gd" id="1_0vmb0"]
+[ext_resource type="Texture2D" uid="uid://boeptr3jkuv2k" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_run_anim_f0.png" id="2_akf1l"]
+[ext_resource type="Texture2D" uid="uid://cbbrtkqicqwde" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_run_anim_f1.png" id="3_p3cl6"]
+[ext_resource type="Texture2D" uid="uid://dvt5a3g07bhgw" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_run_anim_f2.png" id="4_1hx5o"]
+[ext_resource type="Texture2D" uid="uid://bo5s4ad6ic1ba" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_run_anim_f3.png" id="5_7wja4"]
+[ext_resource type="Texture2D" uid="uid://21imsd3uih5r" path="res://map/0x72_DungeonTilesetII_v1.7/chort_idle_anim_f0.png" id="6_jvekl"]
+[ext_resource type="Texture2D" uid="uid://foxvg5ai68qi" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_idle_anim_f1.png" id="7_ntktw"]
+[ext_resource type="Texture2D" uid="uid://mmyrucagxfs5" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_idle_anim_f2.png" id="8_64xsj"]
+[ext_resource type="Texture2D" uid="uid://xjbhxxbqi7m2" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_idle_anim_f3.png" id="9_tuub6"]
+[ext_resource type="PackedScene" uid="uid://bsh38i5wab6e1" path="res://prefabs/emenykill.tscn" id="10_fjmif"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4uw87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_akf1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p3cl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1hx5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7wja4")
+}],
+"loop": true,
+"name": &"chase",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jvekl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ntktw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_64xsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tuub6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvl23"]
+height = 36.9501
+
+[node name="enemy" type="Node2D"]
+scale = Vector2(3.41, 3.41)
+script = ExtResource("1_0vmb0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2.23913)
+sprite_frames = SubResource("SpriteFrames_4uw87")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -2)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 5.57185)
+rotation = -1.57079
+target_position = Vector2(-0.0717297, 18.7683)
+
+[node name="RayCastRight2" type="RayCast2D" parent="."]
+position = Vector2(9.97067, 5.57185)
+target_position = Vector2(0.293254, 19.3548)
+
+[node name="RayCastLeft2" type="RayCast2D" parent="."]
+position = Vector2(-9.67742, 5.27859)
+rotation = 3.14158
+target_position = Vector2(0.293499, -19.3548)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 5.5)
+rotation = 1.57079
+target_position = Vector2(-0.22152, 17.8886)
+
+[node name="emenykill" parent="." instance=ExtResource("10_fjmif")]
+position = Vector2(-0.293255, 1.46628)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="emenykill"]
+position = Vector2(1.17302, 2.34604)
+shape = SubResource("CapsuleShape2D_hvl23")

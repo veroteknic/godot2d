@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxvc60ctvj3v4"
+path="res://.godot/imported/X2Download.com - SCP on site radio- Channel 3 music (128 kbps).mp3-3fc684a43c556e336aa9dbe6a5f3581b.mp3str"
+
+[deps]
+
+source_file="res://audio folder/music/X2Download.com - SCP on site radio- Channel 3 music (128 kbps).mp3"
+dest_files=["res://.godot/imported/X2Download.com - SCP on site radio- Channel 3 music (128 kbps).mp3-3fc684a43c556e336aa9dbe6a5f3581b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

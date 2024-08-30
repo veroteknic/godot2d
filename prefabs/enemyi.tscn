@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://6lcs17qw3wag"]
+
+[ext_resource type="Script" path="res://scripts/chortfinal.gd" id="1_pnlj6"]
+[ext_resource type="PackedScene" uid="uid://bjxxmg47grsoq" path="res://prefabs/killzone.tscn" id="2_ogidr"]
+[ext_resource type="Texture2D" uid="uid://b4i8kka4701x7" path="res://map/0x72_DungeonTilesetII_v1.7/frames/big_demon_idle_anim_f0.png" id="3_pnxk5"]
+[ext_resource type="Texture2D" uid="uid://0cfeu2tcpjwn" path="res://map/0x72_DungeonTilesetII_v1.7/frames/big_demon_idle_anim_f1.png" id="4_md2ge"]
+[ext_resource type="Texture2D" uid="uid://syls12gna8yd" path="res://map/0x72_DungeonTilesetII_v1.7/frames/big_demon_idle_anim_f2.png" id="5_dk2gf"]
+[ext_resource type="Texture2D" uid="uid://cc0oujpeofpq0" path="res://map/0x72_DungeonTilesetII_v1.7/frames/big_demon_idle_anim_f3.png" id="6_s65ke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf3f2"]
+size = Vector2(20, 29.5762)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywh3a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pnxk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_md2ge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dk2gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s65ke")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}]
+
+[node name="enemy" type="Node2D"]
+scale = Vector2(4.89, 4.89)
+script = ExtResource("1_pnlj6")
+
+[node name="killzone" parent="." instance=ExtResource("2_ogidr")]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(7.10543e-15, 3.98021)
+shape = SubResource("RectangleShape2D_pf3f2")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 5.57185)
+rotation = -1.57079
+target_position = Vector2(-0.0717297, 18.7683)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 5.5)
+rotation = 1.57079
+target_position = Vector2(-0.22152, 17.8886)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ywh3a")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.683697

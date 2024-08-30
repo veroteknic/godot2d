@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwaw5q4jrmfp1"]
+
+[ext_resource type="Script" path="res://scripts/ohthemisery.gd" id="1_mo0ha"]
+[ext_resource type="Texture2D" uid="uid://b4i8kka4701x7" path="res://map/0x72_DungeonTilesetII_v1.7/frames/big_demon_idle_anim_f0.png" id="2_ymijw"]
+[ext_resource type="Texture2D" uid="uid://0cfeu2tcpjwn" path="res://map/0x72_DungeonTilesetII_v1.7/frames/big_demon_idle_anim_f1.png" id="3_alwi5"]
+[ext_resource type="Texture2D" uid="uid://syls12gna8yd" path="res://map/0x72_DungeonTilesetII_v1.7/frames/big_demon_idle_anim_f2.png" id="4_851el"]
+[ext_resource type="Texture2D" uid="uid://cc0oujpeofpq0" path="res://map/0x72_DungeonTilesetII_v1.7/frames/big_demon_idle_anim_f3.png" id="5_v7747"]
+[ext_resource type="PackedScene" uid="uid://bjxxmg47grsoq" path="res://prefabs/killzone.tscn" id="6_cbp5s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwv7t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ymijw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_alwi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_851el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v7747")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqw6j"]
+size = Vector2(282, 192)
+
+[sub_resource type="Curve" id="Curve_3cvus"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0.0949721, 30.7839), 0.0, 0.0, 0, 0, Vector2(1, -65.5582), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vx8gt"]
+_data = [Vector2(0.24581, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.255819), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_bakmr"]
+offsets = PackedFloat32Array(0, 0.68, 0.82)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.516078, 0, 1, 1, 0.54902, 0, 1)
+
+[node name="big boss" type="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(10352, -4528)
+scale = Vector2(12.89, 12.89)
+script = ExtResource("1_mo0ha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(22.3429, 0.620636)
+sprite_frames = SubResource("SpriteFrames_gwv7t")
+frame_progress = 0.237425
+flip_h = true
+
+[node name="killzone" parent="." instance=ExtResource("6_cbp5s")]
+position = Vector2(1.24124, 6.827)
+scale = Vector2(0.0775795, 0.0775795)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(32, -16)
+shape = SubResource("RectangleShape2D_bqw6j")
+
+[node name="0" type="CPUParticles2D" parent="."]
+position = Vector2(11.7921, 6.20636)
+rotation = 4.93928
+amount = 500
+lifetime = 0.25
+emission_shape = 1
+emission_sphere_radius = 4.0
+spread = 0.0
+gravity = Vector2(-9000, 0)
+radial_accel_min = -50.0
+radial_accel_max = -40.0
+radial_accel_curve = SubResource("Curve_3cvus")
+scale_amount_min = 12.0
+scale_amount_max = 45.31
+scale_amount_curve = SubResource("Curve_vx8gt")
+color_ramp = SubResource("Gradient_bakmr")
