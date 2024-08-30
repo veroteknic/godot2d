@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bq2hue8exgvbj"]
 
-[ext_resource type="Script" path="res://prefabs/squish.gd" id="1_shwvs"]
+[ext_resource type="Script" path="res://prefabs/squish.gd" id="1_uakmw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a1dj3"]
 height = 36.9501
@@ -16,7 +16,7 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 position = Vector2(-0.293255, 1.46628)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_shwvs")
+script = ExtResource("1_uakmw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(27.8592, 4.39882)

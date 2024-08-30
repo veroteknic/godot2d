@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsh38i5wab6e1"]
 
 [ext_resource type="Script" path="res://scripts/kill.gd" id="1_vcrqk"]
-[ext_resource type="AudioStream" uid="uid://c77c7668wlv8v" path="res://prefabs/hitHurt.wav" id="2_0scxc"]
+[ext_resource type="AudioStream" uid="uid://c77c7668wlv8v" path="res://prefabs/hitHurt.wav" id="2_eaf27"]
 
 [sub_resource type="Curve" id="Curve_67kny"]
 _data = [Vector2(0.00558659, 1), 0.0, 0.0, 0, 0, Vector2(0.924581, 0.200238), 0.0, 0.0, 0, 0]
@@ -18,7 +18,7 @@ script = ExtResource("1_vcrqk")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_0scxc")
+stream = ExtResource("2_eaf27")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
