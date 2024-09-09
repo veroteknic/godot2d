@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://dm8ra8wx5ihkr"]
+
+[ext_resource type="Script" path="res://movingplatform.gd" id="1_4fndh"]
+[ext_resource type="Texture2D" uid="uid://d3ae66evybiqj" path="res://map/Free/Traps/Falling Platforms/On (32x10).png" id="1_4yxtg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w60o2"]
+atlas = ExtResource("1_4yxtg")
+region = Rect2(0, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nk8w"]
+atlas = ExtResource("1_4yxtg")
+region = Rect2(32, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1ras"]
+atlas = ExtResource("1_4yxtg")
+region = Rect2(64, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk23u"]
+atlas = ExtResource("1_4yxtg")
+region = Rect2(96, 0, 32, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8pb5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w60o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nk8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1ras")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk23u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="Curve" id="Curve_8aow0"]
+_data = [Vector2(0, 0.990736), 0.0, 0.0, 0, 0, Vector2(1, 0.0921615), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_p2cuu"]
+offsets = PackedFloat32Array(0, 0.74)
+colors = PackedColorArray(0.368479, 0.368479, 0.368479, 1, 1, 1, 1, 0.376471)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lq4ft"]
+size = Vector2(31.5933, 9.71698)
+
+[node name="moving plat" type="StaticBody2D"]
+texture_filter = 1
+scale = Vector2(9.37, 9.37)
+collision_layer = 65535
+collision_mask = 65535
+script = ExtResource("1_4fndh")
+
+[node name="AnimatableBody2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k8pb5")
+autoplay = "default"
+frame_progress = 0.258969
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="AnimatableBody2D"]
+position = Vector2(-0.628931, 9.22432)
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 4.88
+spread = 170.7
+gravity = Vector2(0, 1001.11)
+radial_accel_min = -45.27
+radial_accel_max = 96.14
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.0
+scale_amount_max = 31.31
+scale_amount_curve = SubResource("Curve_8aow0")
+color = Color(0.641934, 0.641934, 0.641934, 1)
+color_ramp = SubResource("Gradient_p2cuu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.209644, -0.0366873)
+shape = SubResource("RectangleShape2D_lq4ft")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(19.2872, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+target_position = Vector2(-19.9161, 0)
