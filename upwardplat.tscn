@@ -90,4 +90,4 @@ target_position = Vector2(0, -18.143)
 
 [node name="RayCast2D2" type="RayCast2D" parent="."]
 texture_filter = 1
-target_position = Vector2(-0.213447, 15.2615)
+target_position = Vector2(0, 4.80256)
