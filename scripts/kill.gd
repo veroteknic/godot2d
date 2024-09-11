@@ -2,8 +2,8 @@ extends Area2D
 @onready var timer = $Timer
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
 @onready var cpu_particles_2d = $CPUParticles2D
-
 var player: CharacterBody2D
+
 func _ready():
 	Engine.time_scale = 1
 	player = get_parent().get_parent().get_parent().get_node("player")
@@ -20,5 +20,5 @@ func _on_body_entered(_body):
 	audio_stream_player_2d.play()
 	
 	timer.start()
-	
-	
+
+		
