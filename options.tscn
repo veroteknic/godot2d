@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd8paf7s2h8lk"]
+
+[ext_resource type="Script" path="res://options.gd" id="1_r5joc"]
+[ext_resource type="FontFile" uid="uid://gvdr5gr1htda" path="res://audio folder/sfx/BauhausBold.ttf" id="2_6jcix"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 26.93
+offset_right = 26.93
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r5joc")
+
+[node name="volume2" type="Label" parent="."]
+layout_mode = 2
+offset_left = -247.93
+offset_top = -182.0
+offset_right = 269.07
+offset_bottom = -86.0
+theme_override_fonts/font = ExtResource("2_6jcix")
+theme_override_font_sizes/font_size = 100
+text = "volume"
+
+[node name="volume" type="HSlider" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = -244.93
+offset_top = -87.0
+offset_right = 269.07
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+min_value = -100.0
+max_value = 0.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 42.13
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="volume3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6jcix")
+theme_override_font_sizes/font_size = 100
+text = "resoulution"
+
+[node name="resoulution" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+selected = 1
+item_count = 4
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x900"
+popup/item_2/id = 2
+popup/item_3/text = "1152x64"
+popup/item_3/id = 3
+
+[node name="back" type="Button" parent="."]
+layout_mode = 2
+offset_left = -247.93
+offset_top = 219.0
+offset_right = 269.07
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_6jcix")
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[connection signal="value_changed" from="volume" to="." method="_on_volume_value_changed"]
+[connection signal="item_selected" from="VBoxContainer/resoulution" to="." method="_on_resoulution_item_selected"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
