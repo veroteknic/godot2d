@@ -282,12 +282,13 @@ scale = Vector2(1.95, 4.3)
 theme_override_fonts/font = ExtResource("5_7p65v")
 text = "player stopping wall inc"
 
-[node name="TextEdit" type="TextEdit" parent="Control"]
+[node name="TextEdit" type="TextEdit" parent="Control/text"]
 offset_left = 717.0
 offset_top = 2314.0
 offset_right = 1158.0
 offset_bottom = 2351.0
 text = "hint: the answer is to your left. (and totally not invisible)"
+editable = false
 
 [node name="world" type="Node" parent="."]
 

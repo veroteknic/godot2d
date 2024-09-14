@@ -64,6 +64,7 @@ frame_progress = 0.258969
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="AnimatableBody2D"]
 position = Vector2(-0.628931, 9.22432)
+amount = 20
 lifetime = 0.5
 emission_shape = 1
 emission_sphere_radius = 4.88
