@@ -26,8 +26,7 @@ Bgm="*res://prefabs/bgm.tscn"
 
 [display]
 
-window/size/viewport_width=1680
-window/size/viewport_height=1050
+window/size/mode=3
 
 [input]
 
