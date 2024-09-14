@@ -1,8 +1,8 @@
 extends Area2D
 
 @onready var audio_stream_player = $AudioStreamPlayer
-@onready var game_manager = $"../../GameManager"
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var game_manager = $"../../../gamedependencies/GameManager"
 
 func _on_body_entered(_body):
 	var tween = create_tween()

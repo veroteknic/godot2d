@@ -62,14 +62,12 @@ text = "resoulution"
 [node name="resoulution" type="OptionButton" parent="VBoxContainer"]
 layout_mode = 2
 selected = 1
-item_count = 4
+item_count = 3
 popup/item_0/text = "1920x1080"
-popup/item_1/text = "1600x900"
+popup/item_1/text = "1680x1050"
 popup/item_1/id = 1
 popup/item_2/text = "1280x900"
 popup/item_2/id = 2
-popup/item_3/text = "1152x64"
-popup/item_3/id = 3
 
 [node name="back" type="Button" parent="."]
 layout_mode = 2

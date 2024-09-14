@@ -24,6 +24,6 @@ func _on_resoulution_item_selected(index):
 		0:
 			DisplayServer.window_set_size(Vector2i(1920, 1080))
 		1:
-			DisplayServer.window_set_size(Vector2i(1600, 900))
+			DisplayServer.window_set_size(Vector2i(1680, 1050))
 		2:
 			DisplayServer.window_set_size(Vector2i(1280, 900))
