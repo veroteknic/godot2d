@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 const SPEED = 600
 const JUMP_VELOCITY = -905
-@onready var timer = $Timer
+@onready var timer = $killtimer
+@onready var sprint = $sprint
 @onready var audio_player = $AudioStreamPlayer
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var sprite_2d = $AnimatedSprite2D
@@ -38,7 +39,10 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY * 1.2
 			audio_player.play()
 			double_jump_used = true
-
+	if Input.is_action_pressed("sprint"):
+		SPEED * 2
+		sprint.start()
+		print("sprint start")
 	if is_on_floor():
 		double_jump_used = false
 	
@@ -58,3 +62,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		health -= 1
 		print(health)
+
+
+func _on_sprint_timeout():
+	SPEED / 2
+	print("sprint over")

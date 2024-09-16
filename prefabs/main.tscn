@@ -206,6 +206,27 @@ frame_36/duration = 0.4
 
 [node name="Node2D" type="Node2D"]
 
+[node name="text" type="Node" parent="."]
+
+[node name="TextEdit" type="TextEdit" parent="text"]
+offset_left = 717.0
+offset_top = 2314.0
+offset_right = 1158.0
+offset_bottom = 2351.0
+text = "hint: the answer is to your left. (and totally not invisible)"
+editable = false
+
+[node name="Label" type="Label" parent="text"]
+texture_filter = 1
+offset_left = 1248.0
+offset_top = 2192.0
+offset_right = 1546.0
+offset_bottom = 2239.0
+rotation = 1.57079
+scale = Vector2(1.95, 4.3)
+theme_override_fonts/font = ExtResource("5_7p65v")
+text = "player stopping wall inc"
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -269,27 +290,6 @@ offset_bottom = 21240.0
 texture = ExtResource("1_qtddw")
 stretch_mode = 1
 
-[node name="text" type="Node" parent="Control"]
-
-[node name="Label" type="Label" parent="Control/text"]
-texture_filter = 1
-offset_left = 1248.0
-offset_top = 2192.0
-offset_right = 1546.0
-offset_bottom = 2239.0
-rotation = 1.57079
-scale = Vector2(1.95, 4.3)
-theme_override_fonts/font = ExtResource("5_7p65v")
-text = "player stopping wall inc"
-
-[node name="TextEdit" type="TextEdit" parent="Control/text"]
-offset_left = 717.0
-offset_top = 2314.0
-offset_right = 1158.0
-offset_bottom = 2351.0
-text = "hint: the answer is to your left. (and totally not invisible)"
-editable = false
-
 [node name="world" type="Node" parent="."]
 
 [node name="map" type="TileMapLayer" parent="world"]
@@ -309,7 +309,7 @@ tile_map_data = PackedByteArray("AADw/+f/AAAHAAEAAAD2/+j/AAAHAAEAAAD2/+n/AAAHAAE
 tile_set = ExtResource("3_wbp5n")
 
 [node name="player" parent="world" instance=ExtResource("4_r2owu")]
-position = Vector2(924, 4132)
+position = Vector2(9345, -4651)
 
 [node name="coins" type="Node" parent="world"]
 

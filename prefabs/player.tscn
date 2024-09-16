@@ -82,11 +82,16 @@ stream = ExtResource("11_7kdhp")
 position = Vector2(0, 38)
 shape = SubResource("RectangleShape2D_nuilh")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="killtimer" type="Timer" parent="."]
 wait_time = 3.45
 one_shot = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_yrjqr")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="sprint" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="killtimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="sprint" to="." method="_on_sprint_timeout"]
