@@ -309,7 +309,7 @@ tile_map_data = PackedByteArray("AADw/+f/AAAHAAEAAAD2/+j/AAAHAAEAAAD2/+n/AAAHAAE
 tile_set = ExtResource("3_wbp5n")
 
 [node name="player" parent="world" instance=ExtResource("4_r2owu")]
-position = Vector2(9345, -4651)
+position = Vector2(1008, 4018)
 
 [node name="coins" type="Node" parent="world"]
 
