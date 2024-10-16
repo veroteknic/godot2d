@@ -15,49 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://biss81eeinx3g" path="res://hearts/5 hearts.svg" id="13_xk41o"]
 [ext_resource type="Texture2D" uid="uid://bisf5nnlttdc7" path="res://hearts/5 hearts (1).svg" id="14_astw7"]
 [ext_resource type="PackedScene" uid="uid://hjc3nkbn3r3u" path="res://prefabs/texts.tscn" id="15_5mwyq"]
-[ext_resource type="Texture2D" uid="uid://dwdhtus5ckqmh" path="res://CatDancing/frame_00_delay-0.04s.png" id="16_csbrw"]
 [ext_resource type="PackedScene" uid="uid://7mh21svj5s4" path="res://prefabs/fire.tscn" id="16_rktm5"]
-[ext_resource type="Texture2D" uid="uid://cr0uueyawujki" path="res://CatDancing/frame_01_delay-0.04s.png" id="17_ai04b"]
 [ext_resource type="PackedScene" uid="uid://ba8jrabottlkk" path="res://prefabs/chort.tscn" id="17_upxgn"]
-[ext_resource type="Texture2D" uid="uid://bxpr5l2hv1d6u" path="res://CatDancing/frame_10_delay-0.04s.png" id="18_3ocfw"]
 [ext_resource type="Script" path="res://prefabs/followplayer.gd" id="18_3upho"]
-[ext_resource type="Texture2D" uid="uid://chtttj5rrqc70" path="res://CatDancing/frame_11_delay-0.04s.png" id="19_8b1vv"]
 [ext_resource type="Texture2D" uid="uid://c6jh8x1vy22k7" path="res://prefabs/hurt.png" id="19_ubnoc"]
-[ext_resource type="Texture2D" uid="uid://cog15pex5ntfd" path="res://CatDancing/frame_12_delay-0.04s.png" id="20_5ji12"]
 [ext_resource type="Texture2D" uid="uid://b8jyowf75rob7" path="res://prefabs/images.png" id="20_a80ch"]
-[ext_resource type="Texture2D" uid="uid://fu7x1l36suvr" path="res://CatDancing/frame_13_delay-0.04s.png" id="21_7kp3k"]
 [ext_resource type="Script" path="res://scripts/demonsquish____.gd" id="21_ocygg"]
-[ext_resource type="Texture2D" uid="uid://dd1nsj3ra5416" path="res://CatDancing/frame_14_delay-0.04s.png" id="22_k8p2b"]
-[ext_resource type="Texture2D" uid="uid://bcjpyhjmns1bk" path="res://CatDancing/frame_15_delay-0.04s.png" id="23_ysq63"]
-[ext_resource type="Texture2D" uid="uid://bf443cnbgc7q3" path="res://CatDancing/frame_16_delay-0.04s.png" id="24_k10mr"]
-[ext_resource type="Texture2D" uid="uid://bpihgwyk6edjq" path="res://CatDancing/frame_17_delay-0.04s.png" id="25_b7nry"]
-[ext_resource type="Texture2D" uid="uid://brx178pe5rfrs" path="res://CatDancing/frame_18_delay-0.04s.png" id="26_n3p7j"]
-[ext_resource type="Texture2D" uid="uid://bkm36qxr6xhg4" path="res://CatDancing/frame_19_delay-0.04s.png" id="27_6eloy"]
-[ext_resource type="Texture2D" uid="uid://b7q8rco6rexms" path="res://CatDancing/frame_02_delay-0.04s.png" id="28_78vf8"]
-[ext_resource type="Texture2D" uid="uid://bg7msxh5vfhbx" path="res://CatDancing/frame_20_delay-0.04s.png" id="29_1fc8m"]
-[ext_resource type="Texture2D" uid="uid://myb2e872e6uu" path="res://CatDancing/frame_21_delay-0.04s.png" id="30_xqcmc"]
-[ext_resource type="Texture2D" uid="uid://ckve7hkxra2on" path="res://CatDancing/frame_22_delay-0.04s.png" id="31_g18v8"]
-[ext_resource type="Texture2D" uid="uid://c5ttfnlwc5a6v" path="res://CatDancing/frame_23_delay-0.04s.png" id="32_ym1uc"]
-[ext_resource type="Texture2D" uid="uid://bc7kaqsxj25qe" path="res://CatDancing/frame_24_delay-0.04s.png" id="33_fmhxt"]
-[ext_resource type="Texture2D" uid="uid://driljia2xapvk" path="res://CatDancing/frame_25_delay-0.04s.png" id="34_6isil"]
-[ext_resource type="Texture2D" uid="uid://cxtx1kgvnkarw" path="res://CatDancing/frame_26_delay-0.04s.png" id="35_h2bai"]
-[ext_resource type="Texture2D" uid="uid://ciypbf8jn6kv5" path="res://CatDancing/frame_27_delay-0.04s.png" id="36_briid"]
-[ext_resource type="Texture2D" uid="uid://bnyxqbics4di5" path="res://CatDancing/frame_28_delay-0.04s.png" id="37_5wbn0"]
-[ext_resource type="Texture2D" uid="uid://bq4j756oy5g0b" path="res://CatDancing/frame_29_delay-0.04s.png" id="38_rgrvr"]
-[ext_resource type="Texture2D" uid="uid://daikseio53qes" path="res://CatDancing/frame_03_delay-0.04s.png" id="39_yjv80"]
-[ext_resource type="Texture2D" uid="uid://2og574mdkoax" path="res://CatDancing/frame_30_delay-0.04s.png" id="40_pk5mx"]
-[ext_resource type="Texture2D" uid="uid://blgybf01dd5oy" path="res://CatDancing/frame_31_delay-0.04s.png" id="41_81hx5"]
-[ext_resource type="Texture2D" uid="uid://bmopk18o1ugdj" path="res://CatDancing/frame_32_delay-0.04s.png" id="42_iqi7p"]
-[ext_resource type="Texture2D" uid="uid://blopuv86od3vr" path="res://CatDancing/frame_33_delay-0.04s.png" id="43_rjeor"]
-[ext_resource type="Texture2D" uid="uid://bgv35a11twn6i" path="res://CatDancing/frame_34_delay-0.04s.png" id="44_ukn5h"]
-[ext_resource type="Texture2D" uid="uid://dpstmkgki7548" path="res://CatDancing/frame_35_delay-0.04s.png" id="45_ci06w"]
-[ext_resource type="Texture2D" uid="uid://6sidwwfp40bi" path="res://CatDancing/frame_36_delay-0.03s.png" id="46_1yo0r"]
-[ext_resource type="Texture2D" uid="uid://b5v04vkjtt3kf" path="res://CatDancing/frame_04_delay-0.04s.png" id="47_w7ey7"]
-[ext_resource type="Texture2D" uid="uid://d08dof7ug8j2p" path="res://CatDancing/frame_05_delay-0.04s.png" id="48_dl1m7"]
-[ext_resource type="Texture2D" uid="uid://b85fsge7bu1al" path="res://CatDancing/frame_06_delay-0.04s.png" id="49_65xj8"]
-[ext_resource type="Texture2D" uid="uid://cftuhe5eqfhm1" path="res://CatDancing/frame_07_delay-0.04s.png" id="50_0pcxt"]
-[ext_resource type="Texture2D" uid="uid://5aw7sglnujwd" path="res://CatDancing/frame_08_delay-0.04s.png" id="51_1vh25"]
-[ext_resource type="Texture2D" uid="uid://dkrkucufk10pf" path="res://CatDancing/frame_09_delay-0.04s.png" id="52_uc1mp"]
 [ext_resource type="PackedScene" uid="uid://dm8ra8wx5ihkr" path="res://movingplat.tscn" id="59_hvabx"]
 [ext_resource type="PackedScene" uid="uid://cqwc1l4ax4tqm" path="res://upwardplat.tscn" id="60_n3ox8"]
 
@@ -127,81 +90,192 @@ size = Vector2(20, 394)
 radius = 56.0
 height = 160.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vjm5k"]
+load_path = "res://.godot/imported/frame_00_delay-0.04s.png-3edd05bdf4139a2bfb1ee7876f0244d9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6j12j"]
+load_path = "res://.godot/imported/frame_01_delay-0.04s.png-865402f7ac02ffa30d36e82f96c480c6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7khkp"]
+load_path = "res://.godot/imported/frame_10_delay-0.04s.png-a3e20467dd663d35642b945a3f583567.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fudau"]
+load_path = "res://.godot/imported/frame_11_delay-0.04s.png-829072f8adaceb20f0d3bb1f48c646b2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6mx0o"]
+load_path = "res://.godot/imported/frame_12_delay-0.04s.png-5b987c3178028177f33d123d49b2874b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hr6ml"]
+load_path = "res://.godot/imported/frame_13_delay-0.04s.png-90b85671b79fedf2e499120894852a84.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_en1ct"]
+load_path = "res://.godot/imported/frame_14_delay-0.04s.png-9ed17173fe847e78a3758d4171395e4a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nufmw"]
+load_path = "res://.godot/imported/frame_15_delay-0.04s.png-37abac7dbd3ac95e2c7de6c9acc4d1c7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1prnw"]
+load_path = "res://.godot/imported/frame_16_delay-0.04s.png-ff61e7b190f5bc71f55d5615e1347760.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1eedi"]
+load_path = "res://.godot/imported/frame_17_delay-0.04s.png-74602a8f5be4bb9dcb1143a5b588816e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dr4e7"]
+load_path = "res://.godot/imported/frame_18_delay-0.04s.png-423465812696f15b1455d1f51ccad211.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r3seo"]
+load_path = "res://.godot/imported/frame_19_delay-0.04s.png-f0b19d763fbcf14895ca44538eabbf9e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ux6y"]
+load_path = "res://.godot/imported/frame_02_delay-0.04s.png-1664f315c22a01b41c6846d0f1b7ddbf.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wl0jm"]
+load_path = "res://.godot/imported/frame_20_delay-0.04s.png-4d05cd626d6b7a9011c6446a37e419f3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ivyhw"]
+load_path = "res://.godot/imported/frame_21_delay-0.04s.png-d7327dd81ace2fb6fa6418f07237118d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4y8p2"]
+load_path = "res://.godot/imported/frame_22_delay-0.04s.png-fee51980cdb290c858d10851d1af693d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5atfi"]
+load_path = "res://.godot/imported/frame_23_delay-0.04s.png-84e76764e74289653924136fe10a4407.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2ej2u"]
+load_path = "res://.godot/imported/frame_24_delay-0.04s.png-7a5a234dc058aa1610fee3f655fbdc67.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o6d6x"]
+load_path = "res://.godot/imported/frame_25_delay-0.04s.png-90876ae074ca743bcfcb05d7da5545f8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r6yu2"]
+load_path = "res://.godot/imported/frame_26_delay-0.04s.png-a8f7537e346523654cd47704b4e9e5a2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_twmab"]
+load_path = "res://.godot/imported/frame_27_delay-0.04s.png-cdb26ad421e4b16c27075bba2198b222.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b4xhy"]
+load_path = "res://.godot/imported/frame_28_delay-0.04s.png-fb855de7d21d84b2e2093ef2154d0b1f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yq1nw"]
+load_path = "res://.godot/imported/frame_29_delay-0.04s.png-8beebaf6ef746706620c9fc0faa43f99.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4b64j"]
+load_path = "res://.godot/imported/frame_03_delay-0.04s.png-4d429da6d50a8fc228ed8566682693b9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ovi3"]
+load_path = "res://.godot/imported/frame_30_delay-0.04s.png-637cb32018963789fcf118d128dea75e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7q1sh"]
+load_path = "res://.godot/imported/frame_31_delay-0.04s.png-5776cffec5311788d329f2c3cf4ed126.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i8eo5"]
+load_path = "res://.godot/imported/frame_32_delay-0.04s.png-ec112efd68758b43f43f5db6f7996780.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_affnn"]
+load_path = "res://.godot/imported/frame_33_delay-0.04s.png-0d2e91e66672ae44e2787384ec43a883.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_saxhn"]
+load_path = "res://.godot/imported/frame_34_delay-0.04s.png-2bfc0cbde6cea2a36851532290fd5ff4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1sfn7"]
+load_path = "res://.godot/imported/frame_35_delay-0.04s.png-f507e0e51a9b3b7290d32adb628ccb88.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_apuj5"]
+load_path = "res://.godot/imported/frame_36_delay-0.03s.png-484130b28d51c5910e01e1e678e4aecb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6bmh7"]
+load_path = "res://.godot/imported/frame_04_delay-0.04s.png-d6424cd887c8e27149633cc5f3c50e00.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dymxx"]
+load_path = "res://.godot/imported/frame_05_delay-0.04s.png-bfc542b5820a897cf155229cfd3dddf1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wcq37"]
+load_path = "res://.godot/imported/frame_06_delay-0.04s.png-f7baf4594c51c31cd88018286170bcbd.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qx5ve"]
+load_path = "res://.godot/imported/frame_07_delay-0.04s.png-3e7cf969ef68cf20b3cf4d71539f68fc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vgm12"]
+load_path = "res://.godot/imported/frame_08_delay-0.04s.png-361347d194d3fe57b9194b9e67f73ab4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rk60f"]
+load_path = "res://.godot/imported/frame_09_delay-0.04s.png-5270581417c72dc3e803377002e8fe01.ctex"
+
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yquxt"]
 frames = 37
-frame_0/texture = ExtResource("16_csbrw")
+frame_0/texture = SubResource("CompressedTexture2D_vjm5k")
 frame_0/duration = 0.4
-frame_1/texture = ExtResource("17_ai04b")
+frame_1/texture = SubResource("CompressedTexture2D_6j12j")
 frame_1/duration = 0.4
-frame_2/texture = ExtResource("28_78vf8")
+frame_2/texture = SubResource("CompressedTexture2D_7ux6y")
 frame_2/duration = 0.4
-frame_3/texture = ExtResource("39_yjv80")
+frame_3/texture = SubResource("CompressedTexture2D_4b64j")
 frame_3/duration = 0.4
-frame_4/texture = ExtResource("47_w7ey7")
+frame_4/texture = SubResource("CompressedTexture2D_6bmh7")
 frame_4/duration = 0.4
-frame_5/texture = ExtResource("48_dl1m7")
+frame_5/texture = SubResource("CompressedTexture2D_dymxx")
 frame_5/duration = 0.4
-frame_6/texture = ExtResource("49_65xj8")
+frame_6/texture = SubResource("CompressedTexture2D_wcq37")
 frame_6/duration = 0.4
-frame_7/texture = ExtResource("50_0pcxt")
+frame_7/texture = SubResource("CompressedTexture2D_qx5ve")
 frame_7/duration = 0.4
-frame_8/texture = ExtResource("51_1vh25")
+frame_8/texture = SubResource("CompressedTexture2D_vgm12")
 frame_8/duration = 0.4
-frame_9/texture = ExtResource("52_uc1mp")
+frame_9/texture = SubResource("CompressedTexture2D_rk60f")
 frame_9/duration = 0.4
-frame_10/texture = ExtResource("18_3ocfw")
+frame_10/texture = SubResource("CompressedTexture2D_7khkp")
 frame_10/duration = 0.4
-frame_11/texture = ExtResource("19_8b1vv")
+frame_11/texture = SubResource("CompressedTexture2D_fudau")
 frame_11/duration = 0.4
-frame_12/texture = ExtResource("20_5ji12")
+frame_12/texture = SubResource("CompressedTexture2D_6mx0o")
 frame_12/duration = 0.4
-frame_13/texture = ExtResource("21_7kp3k")
+frame_13/texture = SubResource("CompressedTexture2D_hr6ml")
 frame_13/duration = 0.4
-frame_14/texture = ExtResource("22_k8p2b")
+frame_14/texture = SubResource("CompressedTexture2D_en1ct")
 frame_14/duration = 0.4
-frame_15/texture = ExtResource("23_ysq63")
+frame_15/texture = SubResource("CompressedTexture2D_nufmw")
 frame_15/duration = 0.4
-frame_16/texture = ExtResource("24_k10mr")
+frame_16/texture = SubResource("CompressedTexture2D_1prnw")
 frame_16/duration = 0.4
-frame_17/texture = ExtResource("25_b7nry")
+frame_17/texture = SubResource("CompressedTexture2D_1eedi")
 frame_17/duration = 0.4
-frame_18/texture = ExtResource("26_n3p7j")
+frame_18/texture = SubResource("CompressedTexture2D_dr4e7")
 frame_18/duration = 0.4
-frame_19/texture = ExtResource("27_6eloy")
+frame_19/texture = SubResource("CompressedTexture2D_r3seo")
 frame_19/duration = 0.4
-frame_20/texture = ExtResource("29_1fc8m")
+frame_20/texture = SubResource("CompressedTexture2D_wl0jm")
 frame_20/duration = 0.4
-frame_21/texture = ExtResource("30_xqcmc")
+frame_21/texture = SubResource("CompressedTexture2D_ivyhw")
 frame_21/duration = 0.4
-frame_22/texture = ExtResource("31_g18v8")
+frame_22/texture = SubResource("CompressedTexture2D_4y8p2")
 frame_22/duration = 0.4
-frame_23/texture = ExtResource("32_ym1uc")
+frame_23/texture = SubResource("CompressedTexture2D_5atfi")
 frame_23/duration = 0.4
-frame_24/texture = ExtResource("33_fmhxt")
+frame_24/texture = SubResource("CompressedTexture2D_2ej2u")
 frame_24/duration = 0.4
-frame_25/texture = ExtResource("34_6isil")
+frame_25/texture = SubResource("CompressedTexture2D_o6d6x")
 frame_25/duration = 0.4
-frame_26/texture = ExtResource("35_h2bai")
+frame_26/texture = SubResource("CompressedTexture2D_r6yu2")
 frame_26/duration = 0.4
-frame_27/texture = ExtResource("36_briid")
+frame_27/texture = SubResource("CompressedTexture2D_twmab")
 frame_27/duration = 0.4
-frame_28/texture = ExtResource("37_5wbn0")
+frame_28/texture = SubResource("CompressedTexture2D_b4xhy")
 frame_28/duration = 0.4
-frame_29/texture = ExtResource("38_rgrvr")
+frame_29/texture = SubResource("CompressedTexture2D_yq1nw")
 frame_29/duration = 0.4
-frame_30/texture = ExtResource("40_pk5mx")
+frame_30/texture = SubResource("CompressedTexture2D_6ovi3")
 frame_30/duration = 0.4
-frame_31/texture = ExtResource("41_81hx5")
+frame_31/texture = SubResource("CompressedTexture2D_7q1sh")
 frame_31/duration = 0.4
-frame_32/texture = ExtResource("42_iqi7p")
+frame_32/texture = SubResource("CompressedTexture2D_i8eo5")
 frame_32/duration = 0.4
-frame_33/texture = ExtResource("43_rjeor")
+frame_33/texture = SubResource("CompressedTexture2D_affnn")
 frame_33/duration = 0.4
-frame_34/texture = ExtResource("44_ukn5h")
+frame_34/texture = SubResource("CompressedTexture2D_saxhn")
 frame_34/duration = 0.4
-frame_35/texture = ExtResource("45_ci06w")
+frame_35/texture = SubResource("CompressedTexture2D_1sfn7")
 frame_35/duration = 0.4
-frame_36/texture = ExtResource("46_1yo0r")
+frame_36/texture = SubResource("CompressedTexture2D_apuj5")
 frame_36/duration = 0.4
 
 [node name="Node2D" type="Node2D"]
