@@ -50,6 +50,8 @@ scale = Vector2(8.11, 8.11)
 
 [node name="emenykill" parent="." instance=ExtResource("10_y04tq")]
 position = Vector2(-0.293255, 1.46628)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="emenykill"]
 position = Vector2(-6.11858, 5.5374)

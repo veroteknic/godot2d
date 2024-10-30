@@ -1,25 +1,32 @@
 extends CharacterBody2D
 
-const SPEED = 600
-const JUMP_VELOCITY = -905
+var SPEED = 600
+var JUMP_VELOCITY = -905
 @onready var timer = $killtimer
 @onready var sprint = $sprint
 @onready var audio_player = $AudioStreamPlayer
 @onready var collision_shape_2d = $CollisionShape2D
-@onready var sprite_2d = $AnimatedSprite2D
+@onready var sprite_2d = $player
 @onready var kill_player = $AudioStreamPlayer2
 @onready var game_manager = $"../GameManager"
+@onready var cpu_particles_2d = $CPUParticles2D
+@onready var sword = $player/sword
+@onready var kill = $kill
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 var double_jump_used = false
 @export var health: int = 6
 func _ready():
 	Engine.time_scale = 1
-
 func _physics_process(delta):
+	if is_on_floor():
+		print("On floor, emitting particles")
+		cpu_particles_2d.emitting = true
+	else:
+		print("Not on floor, stopping particles")
+		cpu_particles_2d.emitting = false
 	if (velocity.x > 1 or velocity.x < -1):
 		sprite_2d.animation = "running"
 	else:
@@ -39,10 +46,6 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY * 1.2
 			audio_player.play()
 			double_jump_used = true
-	if Input.is_action_pressed("sprint"):
-		SPEED * 2
-		sprint.start()
-		print("sprint start")
 	if is_on_floor():
 		double_jump_used = false
 	
@@ -53,17 +56,37 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, 50)
 	
 	move_and_slide()
-	
+
 	if velocity.x < 0:
+		var tween = create_tween()
 		sprite_2d.flip_h = true
+		tween.tween_property(sword, "rotation", rotation + deg_to_rad(270), 0.1)
 	elif velocity.x > 0:
+		var tween = create_tween()
 		sprite_2d.flip_h = false
-	
+		sword.flip_h = false
+		tween.tween_property(sword, "rotation", rotation + deg_to_rad(-270), 0.1)
 	if Input.is_action_just_pressed("jump"):
 		health -= 1
 		print(health)
+	if velocity.x > 0:
+		if Input.is_action_just_pressed("swing"):
+			var tween = create_tween()
+			tween.tween_property(sword, "rotation", rotation + deg_to_rad(0), 0.05)
+			tween.tween_property(sword, "rotation", rotation - deg_to_rad(100), 0.05)
 
+	if velocity.x > 0:
+		if Input.is_action_just_pressed("swing"):
+			var tween = create_tween()
+			tween.tween_property(sword, "rotation", rotation - deg_to_rad(0), 0.05)
+			tween.tween_property(sword, "rotation", rotation + deg_to_rad(-100), 0.05)
 
 func _on_sprint_timeout():
-	SPEED / 2
+	SPEED - 600
 	print("sprint over")
+
+
+
+
+func _on_area_2d_body_entered(body):
+	pass
