@@ -66,20 +66,17 @@ func _physics_process(delta):
 		sprite_2d.flip_h = false
 		sword.flip_h = false
 		tween.tween_property(sword, "rotation", rotation + deg_to_rad(-270), 0.1)
-	if Input.is_action_just_pressed("jump"):
-		health -= 1
-		print(health)
-	if velocity.x > 0:
-		if Input.is_action_just_pressed("swing"):
-			var tween = create_tween()
-			tween.tween_property(sword, "rotation", rotation + deg_to_rad(0), 0.05)
-			tween.tween_property(sword, "rotation", rotation - deg_to_rad(100), 0.05)
 
-	if velocity.x > 0:
-		if Input.is_action_just_pressed("swing"):
+# Combined swing input handling
+	if Input.is_action_just_pressed("swing"):
+		if velocity.x > 0:
 			var tween = create_tween()
-			tween.tween_property(sword, "rotation", rotation - deg_to_rad(0), 0.05)
-			tween.tween_property(sword, "rotation", rotation + deg_to_rad(-100), 0.05)
+			tween.tween_property(sword, "rotation", rotation + deg_to_rad(0), 0.1)  # Reset rotation
+			tween.tween_property(sword, "rotation", rotation + deg_to_rad(100), 0.1) # Swing effect
+	elif velocity.x < 0:
+		var tween = create_tween()
+		tween.tween_property(sword, "rotation", rotation + deg_to_rad(0), 0.1)
+		tween.tween_property(sword, "rotation", rotation - deg_to_rad(-100), 0.1)
 
 func _on_sprint_timeout():
 	SPEED - 600
