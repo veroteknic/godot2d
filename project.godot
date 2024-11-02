@@ -27,6 +27,8 @@ Bgm="*res://prefabs/bgm.tscn"
 [display]
 
 window/size/mode=3
+window/size/borderless=true
+window/size/always_on_top=true
 
 [input]
 

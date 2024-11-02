@@ -77,6 +77,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a8tx"]
+size = Vector2(119, 36)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuilh"]
 size = Vector2(59, 100)
 
@@ -86,9 +89,6 @@ data = PackedByteArray("SUQzBAAAAAdcUFRYWFgAAAASAAADbWFqb3JfYnJhbmQAbXA0MgBUSVQy
 [sub_resource type="Gradient" id="Gradient_6x4qn"]
 offsets = PackedFloat32Array(0, 0.113333, 0.176667, 0.2, 0.273333, 0.433333, 0.52)
 colors = PackedColorArray(0, 0, 0, 1, 0.116627, 0.116627, 0.116627, 1, 1, 1, 1, 1, 0.205813, 0.205813, 0.205813, 1, 0.276667, 0.276667, 0.276667, 1, 0.866667, 0.866667, 0.866667, 1, 0.52, 0.52, 0.52, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a8tx"]
-size = Vector2(119, 36)
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 6
@@ -116,7 +116,9 @@ sprite_frames = SubResource("SpriteFrames_2k0ut")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="sword" type="AnimatedSprite2D" parent="player"]
+[node name="Area2D" type="Area2D" parent="player"]
+
+[node name="sword" type="AnimatedSprite2D" parent="player/Area2D"]
 texture_filter = 1
 position = Vector2(2.42979, 7.75222)
 rotation = 1.57335
@@ -126,6 +128,11 @@ sprite_frames = SubResource("SpriteFrames_5x7di")
 frame_progress = 0.278116
 offset = Vector2(-0.307524, -10.4789)
 script = ExtResource("12_qrg64")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player/Area2D"]
+position = Vector2(13.25, 7.47728)
+scale = Vector2(0.166667, 0.159091)
+shape = SubResource("RectangleShape2D_5a8tx")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_7kdhp")
@@ -164,12 +171,6 @@ scale_amount_min = 0.0
 scale_amount_max = 15.0
 color_ramp = SubResource("Gradient_6x4qn")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(79.5, 47)
-shape = SubResource("RectangleShape2D_5a8tx")
-
+[connection signal="body_entered" from="player/Area2D" to="player/Area2D/sword" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="killtimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="sprint" to="." method="_on_sprint_timeout"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsh38i5wab6e1"]
+[gd_scene load_steps=6 format=3 uid="uid://bsh38i5wab6e1"]
 
 [ext_resource type="Script" path="res://scripts/kill.gd" id="1_vcrqk"]
 [ext_resource type="AudioStream" uid="uid://c77c7668wlv8v" path="res://prefabs/hitHurt.wav" id="2_eaf27"]
@@ -8,7 +8,12 @@ _data = [Vector2(0.00558659, 1), 0.0, 0.0, 0, 0, Vector2(0.924581, 0.200238), 0.
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_6poaf"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.1, 0.396667, 0.52, 0.666667, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.10084, 0.10084, 1, 1, 0.4, 0.4, 1, 1, 0.52, 0.52, 1, 1, 0.666667, 0.666667, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_lywm0"]
+offsets = PackedFloat32Array(0, 0.18, 0.363333, 0.66, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.181651, 0.181651, 0.181651, 1, 0.366667, 0.366667, 0.366667, 1, 0.66178, 0.66178, 0.66178, 1, 1, 1, 1, 1)
 
 [node name="emenykill" type="Area2D"]
 collision_layer = 2
@@ -33,6 +38,7 @@ scale_amount_max = 44.39
 scale_amount_curve = SubResource("Curve_67kny")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_6poaf")
+color_initial_ramp = SubResource("Gradient_lywm0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
