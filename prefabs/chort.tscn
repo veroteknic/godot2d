@@ -91,7 +91,6 @@ target_position = Vector2(-0.22152, 17.8886)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.879765, 3.81232)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_tarv1")
 debug_color = Color(0.9528, 2.02149e-06, 0.556813, 0.42)
 

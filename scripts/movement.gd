@@ -64,6 +64,7 @@ func _physics_process(delta):
 		sprite_2d.flip_h = true
 		swordanim.play("idle_left")
 		swordanim.play("slash_left")
+		swordanim.stop()
 	elif velocity.x > 0:
 		sprite_2d.flip_h = false
 		swordanim.play("idle_right")

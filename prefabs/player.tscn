@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ikf4w828j8jj" path="res://map/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f3.png" id="10_i60v4"]
 [ext_resource type="AudioStream" uid="uid://cjqbdb8dxii0q" path="res://audio folder/sfx/jump.wav" id="11_7kdhp"]
 [ext_resource type="Texture2D" uid="uid://dd24t51vt5mb1" path="res://map/0x72_DungeonTilesetII_v1.7/frames/weapon_knight_sword.png" id="12_i7ps5"]
-[ext_resource type="AudioStream" path="res://prefabs/hitHurt (1).wav" id="13_7yatu"]
+[ext_resource type="AudioStream" uid="uid://1wjt8ry7ew50" path="res://prefabs/hitHurt (1).wav" id="13_7yatu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2k0ut"]
 animations = [{
