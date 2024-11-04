@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ba8jrabottlkk"]
+[gd_scene load_steps=14 format=3 uid="uid://ba8jrabottlkk"]
 
 [ext_resource type="Script" path="res://scripts/chortfinal.gd" id="1_0vmb0"]
 [ext_resource type="Texture2D" uid="uid://boeptr3jkuv2k" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_run_anim_f0.png" id="2_akf1l"]
@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://mmyrucagxfs5" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_idle_anim_f2.png" id="8_64xsj"]
 [ext_resource type="Texture2D" uid="uid://xjbhxxbqi7m2" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_idle_anim_f3.png" id="9_tuub6"]
 [ext_resource type="PackedScene" uid="uid://bsh38i5wab6e1" path="res://prefabs/emenykill.tscn" id="10_fjmif"]
-[ext_resource type="Script" path="res://prefabs/goombastomp.gd" id="11_ux1py"]
-[ext_resource type="AudioStream" uid="uid://c77c7668wlv8v" path="res://prefabs/hitHurt.wav" id="12_20mex"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4uw87"]
 animations = [{
@@ -50,22 +48,18 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tarv1"]
+radius = 6.45161
+height = 25.8064
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvl23"]
+radius = 9.38416
 height = 36.9501
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_8ih51"]
-a = Vector2(-46.3343, -9.09091)
-b = Vector2(-24.0469, -8.79765)
-
-[sub_resource type="Curve" id="Curve_3bge8"]
-_data = [Vector2(0.00558659, 1), 0.0, 0.0, 0, 0, Vector2(0.924581, 0.200238), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_lm4ub"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[node name="enemy" type="Node2D"]
+[node name="enemy" type="Area2D"]
 scale = Vector2(3.41, 3.41)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_0vmb0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -95,37 +89,15 @@ position = Vector2(0, 5.5)
 rotation = 1.57079
 target_position = Vector2(-0.22152, 17.8886)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.879765, 3.81232)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_tarv1")
+debug_color = Color(0.9528, 2.02149e-06, 0.556813, 0.42)
+
 [node name="emenykill" parent="." instance=ExtResource("10_fjmif")]
 position = Vector2(-0.293255, 1.46628)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="emenykill"]
 position = Vector2(1.17302, 2.34604)
 shape = SubResource("CapsuleShape2D_hvl23")
-
-[node name="goombastomp" type="Area2D" parent="."]
-collision_layer = 6
-collision_mask = 4
-script = ExtResource("11_ux1py")
-
-[node name="heygumbafuku" type="CollisionShape2D" parent="goombastomp"]
-position = Vector2(36.3636, -13.1965)
-shape = SubResource("SegmentShape2D_8ih51")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_20mex")
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="kill" type="CPUParticles2D" parent="."]
-emitting = false
-amount = 80
-one_shot = true
-explosiveness = 1.0
-spread = 180.0
-gravity = Vector2(0, 200)
-initial_velocity_max = 80.67
-scale_amount_min = 9.04
-scale_amount_max = 44.39
-scale_amount_curve = SubResource("Curve_3bge8")
-color = Color(1, 0, 0, 1)
-color_ramp = SubResource("Gradient_lm4ub")

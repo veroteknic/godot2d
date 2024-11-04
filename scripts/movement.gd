@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var swordanim = $swordanim
 
 var SPEED = 600
 var JUMP_VELOCITY = -905
@@ -11,7 +12,9 @@ var JUMP_VELOCITY = -905
 @onready var game_manager = $"../GameManager"
 @onready var cpu_particles_2d = $CPUParticles2D
 @onready var kill = $kill
-@onready var sword = $player/Area2D/sword
+@onready var swordie = $swordie
+@onready var enemydied = $swordie/enemydied
+@onready var enemydead = $enemydead
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -46,7 +49,9 @@ func _physics_process(delta):
 			double_jump_used = true
 	if is_on_floor():
 		double_jump_used = false
-	
+	if Input.is_action_just_pressed("swing"):
+		print("swinggg")
+		swordanim.play()
 	var direction = Input.get_axis("left", "right")
 	if direction != 0:
 		velocity.x = direction * SPEED
@@ -56,29 +61,15 @@ func _physics_process(delta):
 	move_and_slide()
 
 	if velocity.x < 0:
-		var tween = create_tween()
 		sprite_2d.flip_h = true
-		tween.tween_property(sword, "rotation", rotation + deg_to_rad(270), 0.1)
+		swordanim.play("idle_left")
+		swordanim.play("slash_left")
 	elif velocity.x > 0:
-		var tween = create_tween()
 		sprite_2d.flip_h = false
-		sword.flip_h = false
-		tween.tween_property(sword, "rotation", rotation + deg_to_rad(-270), 0.1)
-	if Input.is_action_just_pressed("jump"):
-		health -= 1
-		print(health)
-	if velocity.x > 0:
-		if Input.is_action_just_pressed("swing"):
-			var tween = create_tween()
-			tween.tween_property(sword, "rotation", rotation + deg_to_rad(-0), 1)
-			tween.tween_property(sword, "rotation", rotation - deg_to_rad(-100), 1)
-
-	if velocity.x > 0:
-		if Input.is_action_just_pressed("swing"):
-			var tween = create_tween()
-			tween.tween_property(sword, "rotation", rotation - deg_to_rad(-0), 1)
-			tween.tween_property(sword, "rotation", rotation + deg_to_rad(100), 1)
-
+		swordanim.play("idle_right")
+		swordanim.play("slash")
+		swordanim.stop()
+# Combined swing input handling
 func _on_sprint_timeout():
 	SPEED - 600
 	print("sprint over")
@@ -86,5 +77,12 @@ func _on_sprint_timeout():
 
 
 
-func _on_area_2d_body_entered(body):
-	pass
+
+
+
+func _on_area_2d_area_entered(area):
+	enemydead.play()
+	enemydied.emitting = true
+	area.queue_free()
+	
+	
