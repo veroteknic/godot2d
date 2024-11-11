@@ -61,6 +61,7 @@ shape = SubResource("RectangleShape2D_bwbt2")
 [node name="cpu" type="CPUParticles2D" parent="."]
 position = Vector2(9.38416, 7.33138)
 rotation = 4.93928
+emitting = false
 amount = 500
 lifetime = 0.25
 emission_shape = 1

@@ -20,10 +20,6 @@ config/icon="res://prefabs/icon.svg"
 
 buses/default_bus_layout="res://audio folder/default_bus_layout.tres"
 
-[autoload]
-
-Bgm="*res://prefabs/bgm.tscn"
-
 [display]
 
 window/size/mode=3

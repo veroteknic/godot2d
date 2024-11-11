@@ -1,6 +1,6 @@
 extends CharacterBody2D
 @onready var swordanim = $swordanim
-
+var enemyhealth = 3
 var SPEED = 600
 var JUMP_VELOCITY = -905
 @onready var timer = $killtimer
@@ -10,11 +10,12 @@ var JUMP_VELOCITY = -905
 @onready var sprite_2d = $player
 @onready var kill_player = $AudioStreamPlayer2
 @onready var game_manager = $"../GameManager"
-@onready var cpu_particles_2d = $CPUParticles2D
 @onready var kill = $kill
 @onready var swordie = $swordie
 @onready var enemydied = $swordie/enemydied
 @onready var enemydead = $enemydead
+@onready var footsteps = $footsteps
+@onready var footstep = $footstep
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -24,13 +25,15 @@ var double_jump_used = false
 func _ready():
 	Engine.time_scale = 1
 func _physics_process(delta):
-	if is_on_floor():
-		cpu_particles_2d.emitting = true
-	else:
-		cpu_particles_2d.emitting = false
 	if (velocity.x > 1 or velocity.x < -1):
 		sprite_2d.animation = "running"
+		footstep.start()
+		if footstep.time_left <= 0:
+			footsteps.pitch_scale = randi_range(0.8, 1.2)
+			footsteps.playing = true
+			print("soundplayed")
 	else:
+		footsteps.playing = false
 		sprite_2d.animation = "idle"
 	
 	# Add the gravity.
@@ -70,12 +73,8 @@ func _physics_process(delta):
 		swordanim.play("idle_right")
 		swordanim.play("slash")
 		swordanim.stop()
-# Combined swing input handling
-func _on_sprint_timeout():
-	SPEED - 600
-	print("sprint over")
-
-
+# Footstep handling
+		
 
 
 

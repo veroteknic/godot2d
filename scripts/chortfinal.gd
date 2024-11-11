@@ -2,6 +2,7 @@ extends Node2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_left = $RayCastLeft
+
 @export var health: int = 3  # Example health value for the enemy
 
 const SPEED = 100
@@ -10,9 +11,6 @@ var direction = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-
-	add_to_group("enemies")
 	if ray_cast_right.is_colliding():
 		direction = -1
 		animated_sprite_2d.animation = "chase"

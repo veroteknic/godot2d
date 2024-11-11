@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://uncttf2gh5tn"
+path="res://.godot/imported/Boot Footsteps on Concrete Sound Effect.mp3-677ad6836bb8e9229cd4561832304f52.mp3str"
+
+[deps]
+
+source_file="res://Boot Footsteps on Concrete Sound Effect.mp3"
+dest_files=["res://.godot/imported/Boot Footsteps on Concrete Sound Effect.mp3-677ad6836bb8e9229cd4561832304f52.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

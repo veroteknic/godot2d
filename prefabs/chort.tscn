@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba8jrabottlkk"]
+[gd_scene load_steps=15 format=3 uid="uid://ba8jrabottlkk"]
 
 [ext_resource type="Script" path="res://scripts/chortfinal.gd" id="1_0vmb0"]
 [ext_resource type="Texture2D" uid="uid://boeptr3jkuv2k" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_run_anim_f0.png" id="2_akf1l"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://mmyrucagxfs5" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_idle_anim_f2.png" id="8_64xsj"]
 [ext_resource type="Texture2D" uid="uid://xjbhxxbqi7m2" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_idle_anim_f3.png" id="9_tuub6"]
 [ext_resource type="PackedScene" uid="uid://bsh38i5wab6e1" path="res://prefabs/emenykill.tscn" id="10_fjmif"]
+[ext_resource type="Texture2D" uid="uid://dpmwa1fspv6sx" path="res://prefabs/Cool Text - WASTED 469539974422495.png" id="11_4yi7j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4uw87"]
 animations = [{
@@ -96,7 +97,14 @@ debug_color = Color(0.9528, 2.02149e-06, 0.556813, 0.42)
 
 [node name="emenykill" parent="." instance=ExtResource("10_fjmif")]
 position = Vector2(-0.293255, 1.46628)
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="emenykill"]
 position = Vector2(1.17302, 2.34604)
 shape = SubResource("CapsuleShape2D_hvl23")
+
+[node name="wasted" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.293255, 1.46628)
+scale = Vector2(1, 1)
+texture = ExtResource("11_4yi7j")
