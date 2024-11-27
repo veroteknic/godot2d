@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bby1ylfwufa30"]
+[gd_scene load_steps=27 format=4 uid="uid://bby1ylfwufa30"]
 
 [ext_resource type="Script" path="res://scripts/movement.gd" id="1_t80c4"]
 [ext_resource type="Texture2D" uid="uid://bie8t2gscme1f" path="res://map/0x72_DungeonTilesetII_v1.7/frames/knight_f_hit_anim_f0.png" id="2_mtadk"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cs57e5xmrhkba" path="res://map/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f1.png" id="8_i87kh"]
 [ext_resource type="Texture2D" uid="uid://b4eggvxfskyv1" path="res://map/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f2.png" id="9_rhl8h"]
 [ext_resource type="Texture2D" uid="uid://ikf4w828j8jj" path="res://map/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f3.png" id="10_i60v4"]
-[ext_resource type="AudioStream" uid="uid://cjqbdb8dxii0q" path="res://audio folder/sfx/jump.wav" id="11_7kdhp"]
 [ext_resource type="Texture2D" uid="uid://dd24t51vt5mb1" path="res://map/0x72_DungeonTilesetII_v1.7/frames/weapon_knight_sword.png" id="12_i7ps5"]
 [ext_resource type="AudioStream" uid="uid://1wjt8ry7ew50" path="res://prefabs/hitHurt (1).wav" id="13_7yatu"]
 [ext_resource type="AudioStream" uid="uid://fw2td2eeoqh0" path="res://footsteps/evenbetter.mp3" id="14_qh8oc"]
@@ -57,7 +56,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"running",
-"speed": 20.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuilh"]
@@ -269,11 +268,9 @@ scale = Vector2(6, 6.28571)
 sprite_frames = SubResource("SpriteFrames_2k0ut")
 animation = &"running"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.623365
+frame_progress = 0.729394
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_7kdhp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 38)
@@ -350,11 +347,12 @@ volume_db = 7.429
 
 [node name="footsteps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_qh8oc")
-parameters/looping = true
+volume_db = -13.0
 
-[node name="footstep" type="Timer" parent="."]
-wait_time = 0.001
+[node name="footsteptimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="killtimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="sprint" to="." method="_on_sprint_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="footsteptimer" to="." method="_on_footsteptimer_timeout"]

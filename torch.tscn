@@ -12,4 +12,6 @@ fill_from = Vector2(0.518349, 0.488532)
 [node name="PointLight2D" type="PointLight2D"]
 position = Vector2(384, 92)
 scale = Vector2(6, 6)
+shadow_enabled = true
+shadow_color = Color(1, 1, 1, 0)
 texture = SubResource("GradientTexture2D_5fdog")
