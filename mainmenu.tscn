@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://nn2uhy4gfb8r"]
+
+[ext_resource type="Script" path="res://mainmenu.gd" id="1_0ox3x"]
+[ext_resource type="FontFile" uid="uid://gvdr5gr1htda" path="res://audio folder/sfx/BauhausBold.ttf" id="1_nkgyj"]
+[ext_resource type="Texture2D" uid="uid://dbm2lhf1j2oos" path="res://audio folder/sfx/istockphoto-513921039-612x612.jpg" id="3_mk55u"]
+[ext_resource type="Texture2D" uid="uid://b23gv327pta3x" path="res://audio folder/sfx/cooltext465954749140469.png" id="4_4w0hl"]
+[ext_resource type="AudioStream" uid="uid://do0pe06ek63gd" path="res://audio folder/sfx/click.wav" id="5_gyehd"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ox3x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.5
+offset_top = -160.0
+offset_right = 190.5
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nkgyj")
+theme_override_font_sizes/font_size = 100
+text = "Start"
+
+[node name="options" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nkgyj")
+theme_override_font_sizes/font_size = 100
+text = "Options"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nkgyj")
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+
+[node name="Istockphoto-513921039-612x612" type="Sprite2D" parent="."]
+position = Vector2(403, -7)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("3_mk55u")
+
+[node name="Cooltext465954749140469" type="Sprite2D" parent="."]
+position = Vector2(5, -199)
+texture = ExtResource("4_4w0hl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gyehd")
+volume_db = 24.0
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

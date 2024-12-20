@@ -1,0 +1,209 @@
+[gd_scene load_steps=10 format=3 uid="uid://dv7kfv685g4y1"]
+
+[ext_resource type="Texture2D" uid="uid://d2oji0qnq4am0" path="res://map/0x72_DungeonTilesetII_v1.7/frames/floor_spikes_anim_f0.png" id="1_u0icc"]
+[ext_resource type="PackedScene" uid="uid://bsh38i5wab6e1" path="res://prefabs/emenykill.tscn" id="2_68k1p"]
+[ext_resource type="Texture2D" uid="uid://ypeeyq770qu5" path="res://map/0x72_DungeonTilesetII_v1.7/frames/floor_spikes_anim_f1.png" id="2_tyv0k"]
+[ext_resource type="Texture2D" uid="uid://chit5jjxt8xbx" path="res://map/0x72_DungeonTilesetII_v1.7/frames/floor_spikes_anim_f2.png" id="3_eqwb0"]
+[ext_resource type="Texture2D" uid="uid://31x8tkt0qrxu" path="res://map/0x72_DungeonTilesetII_v1.7/frames/floor_spikes_anim_f3.png" id="4_4q7ui"]
+
+[sub_resource type="Animation" id="Animation_bh17f"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FloorSpikesAnimF1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FloorSpikesAnimF3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FloorSpikesAnimF2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FloorSpikesAnimF0:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("emenykill/collision:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("emenykill:monitoring")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_pnxhy"]
+resource_name = "SpikeTrigger"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FloorSpikesAnimF1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.1, 1.13333, 1.16667, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FloorSpikesAnimF3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.566667, 0.633333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FloorSpikesAnimF2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.16667, 1.2, 1.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FloorSpikesAnimF0:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("emenykill/collision:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("emenykill:monitoring")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.566667, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tgrw2"]
+_data = {
+"RESET": SubResource("Animation_bh17f"),
+"SpikeTrigger": SubResource("Animation_pnxhy")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wweqw"]
+size = Vector2(60, 50)
+
+[node name="spikes" type="CharacterBody2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tgrw2")
+}
+autoplay = "SpikeTrigger"
+
+[node name="emenykill" parent="." instance=ExtResource("2_68k1p")]
+
+[node name="collision" type="CollisionShape2D" parent="emenykill"]
+shape = SubResource("RectangleShape2D_wweqw")
+
+[node name="FloorSpikesAnimF0" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_u0icc")
+
+[node name="FloorSpikesAnimF1" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("2_tyv0k")
+
+[node name="FloorSpikesAnimF2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("3_eqwb0")
+
+[node name="FloorSpikesAnimF3" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("4_4q7ui")
+
+[node name="sigma" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wweqw")
+disabled = true

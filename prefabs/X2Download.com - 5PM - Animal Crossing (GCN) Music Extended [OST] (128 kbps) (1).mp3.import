@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bh4tqeyqu36cp"
+path="res://.godot/imported/X2Download.com - 5PM - Animal Crossing (GCN) Music Extended [OST] (128 kbps) (1).mp3-0536ed4636f65103329d15b5adc89645.mp3str"
+
+[deps]
+
+source_file="res://prefabs/X2Download.com - 5PM - Animal Crossing (GCN) Music Extended [OST] (128 kbps) (1).mp3"
+dest_files=["res://.godot/imported/X2Download.com - 5PM - Animal Crossing (GCN) Music Extended [OST] (128 kbps) (1).mp3-0536ed4636f65103329d15b5adc89645.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

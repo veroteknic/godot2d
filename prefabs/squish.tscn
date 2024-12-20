@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq2hue8exgvbj"]
+
+[ext_resource type="Script" path="res://prefabs/squish.gd" id="1_uakmw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a1dj3"]
+height = 36.9501
+
+[sub_resource type="Curve" id="Curve_e5nw1"]
+_data = [Vector2(0.00558659, 1), 0.0, 0.0, 0, 0, Vector2(0.924581, 0.200238), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_lwngs"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[node name="squish" type="Area2D"]
+position = Vector2(-0.293255, 1.46628)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_uakmw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27.8592, 4.39882)
+shape = SubResource("CapsuleShape2D_a1dj3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(27.8592, 5.27859)
+emitting = false
+amount = 80
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_max = 80.67
+scale_amount_min = 9.04
+scale_amount_max = 44.39
+scale_amount_curve = SubResource("Curve_e5nw1")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_lwngs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

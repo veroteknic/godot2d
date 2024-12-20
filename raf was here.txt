@@ -1,0 +1,4 @@
+Git status
+Git add .
+Git commit -a -m "message"
+Git push 
