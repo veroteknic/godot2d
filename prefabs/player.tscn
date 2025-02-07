@@ -25,7 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://dvemxhjq5p51t" path="res://musicc/27_sword_miss_3.wav" id="23_hhkje"]
 [ext_resource type="AudioStream" uid="uid://u44v60niljx2" path="res://musicc/26_sword_hit_1.wav" id="24_injde"]
 [ext_resource type="AudioStream" uid="uid://c5vul2pgf3vry" path="res://musicc/26_sword_hit_2.wav" id="25_73odp"]
-[ext_resource type="AudioStream" uid="uid://bctgkyhxji3un" path="res://musicc/26_sword_hit_3.wav" id="26_fjeu6"]
+[ext_resource type="AudioStream" uid="uid://cno6dhtpo5u85" path="res://stationary-kill_gDwMUvN.mp3" id="27_kk1fy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2k0ut"]
 animations = [{
@@ -297,7 +297,7 @@ stream_2/stream = ExtResource("23_hhkje")
 streams_count = 3
 stream_0/stream = ExtResource("24_injde")
 stream_1/stream = ExtResource("25_73odp")
-stream_2/stream = ExtResource("26_fjeu6")
+stream_2/stream = ExtResource("27_kk1fy")
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 11
