@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://bby1ylfwufa30"]
+[gd_scene load_steps=52 format=4 uid="uid://bby1ylfwufa30"]
 
 [ext_resource type="Script" path="res://scripts/movement.gd" id="1_t80c4"]
 [ext_resource type="Texture2D" uid="uid://bie8t2gscme1f" path="res://map/0x72_DungeonTilesetII_v1.7/frames/knight_f_hit_anim_f0.png" id="2_mtadk"]
@@ -25,7 +25,12 @@
 [ext_resource type="AudioStream" uid="uid://dvemxhjq5p51t" path="res://musicc/27_sword_miss_3.wav" id="23_hhkje"]
 [ext_resource type="AudioStream" uid="uid://u44v60niljx2" path="res://musicc/26_sword_hit_1.wav" id="24_injde"]
 [ext_resource type="AudioStream" uid="uid://c5vul2pgf3vry" path="res://musicc/26_sword_hit_2.wav" id="25_73odp"]
+[ext_resource type="AudioStream" uid="uid://doyp1uh31dq0p" path="res://musicc/15_human_dash_1.wav" id="27_5vsq2"]
 [ext_resource type="AudioStream" uid="uid://cno6dhtpo5u85" path="res://stationary-kill_gDwMUvN.mp3" id="27_kk1fy"]
+[ext_resource type="AudioStream" uid="uid://svgk3tt6f1n4" path="res://musicc/15_human_dash_2.wav" id="28_lxob0"]
+[ext_resource type="AudioStream" uid="uid://dpiq4riv312k2" path="res://musicc/449552__aleks41__sword-from-sheath.wav" id="29_cayd7"]
+[ext_resource type="AudioStream" uid="uid://c7d0wrklh0d48" path="res://musicc/06_door_close_1.mp3" id="30_6won0"]
+[ext_resource type="AudioStream" uid="uid://dtx25wul8cip5" path="res://musicc/06_door_close_2.mp3" id="31_q56pt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2k0ut"]
 animations = [{
@@ -180,7 +185,7 @@ tracks/0/path = NodePath("swordie:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.266667, 0.666667),
+"times": PackedFloat32Array(0, 0.233333, 0.266667, 0.466667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [1.5708, 0.207591, 2.0944, 1.5708]
@@ -299,6 +304,16 @@ stream_0/stream = ExtResource("24_injde")
 stream_1/stream = ExtResource("25_73odp")
 stream_2/stream = ExtResource("27_kk1fy")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_k1yqd"]
+streams_count = 2
+stream_0/stream = ExtResource("27_5vsq2")
+stream_1/stream = ExtResource("28_lxob0")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tiupx"]
+streams_count = 2
+stream_0/stream = ExtResource("30_6won0")
+stream_1/stream = ExtResource("31_q56pt")
+
 [node name="player" type="CharacterBody2D"]
 collision_layer = 11
 collision_mask = 3
@@ -331,7 +346,7 @@ one_shot = true
 libraries = {
 "": SubResource("AnimationLibrary_8knj3")
 }
-autoplay = "slash"
+autoplay = "idle_right"
 
 [node name="swordie" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -409,6 +424,16 @@ stream = SubResource("AudioStreamRandomizer_cu3xa")
 
 [node name="swordhit" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_t2giy")
+
+[node name="FirstTimeSheath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_cayd7")
+
+[node name="DashActivate" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_k1yqd")
+
+[node name="SecretRoomAudio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-48, -55)
+stream = SubResource("AudioStreamRandomizer_tiupx")
 
 [connection signal="timeout" from="killtimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="sprint" to="." method="_on_sprint_timeout"]
