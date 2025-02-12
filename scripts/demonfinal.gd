@@ -16,3 +16,4 @@ func _process(delta):
 		direction = 1
 		animated_sprite_2d.flip_h = false
 	position.x += direction * SPEED * delta
+	print("debug not on wall")

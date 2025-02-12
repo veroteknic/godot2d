@@ -16,11 +16,11 @@ extends CharacterBody2D
 @onready var land_sound = $jumpland
 @onready var sword_miss_sound = $swordmiss
 @onready var sword_hit_sound = $swordhit
-@onready var camera = $"../Camera2D"  # 🔥 Reference to the Camera2D for screen shake
+@onready var camera = $"../Camera2D"
 @onready var dash_activate: AudioStreamPlayer2D = $DashActivate
 @onready var firstsheath: AudioStreamPlayer2D = $FirstTimeSheath
 
-# Movement variables
+# Movement sh#t
 var SPEED = 600
 var JUMP_VELOCITY = -905
 var DASH_SPEED = 1250
@@ -53,7 +53,7 @@ func _physics_process(delta):
 	_handle_sword_swing()
 	move_and_slide()
 
-# ---------------- Dash Mechanic ----------------
+# ---------------- Dash boi ----------------
 
 func _handle_dash(delta):
 	if dash_cooldown_timer > 0:
@@ -67,11 +67,11 @@ func _handle_dash(delta):
 			_spawn_dash_trail()
 			last_trail_time = dash_trail_timer  
 
-		_set_animation("running")  # ✅ Keep running animation during dash
+		_set_animation("running")  
 
 		if dash_time_left <= 0:
-			is_dashing = false  # ✅ Dash ends
-			_set_animation("idle")  # ✅ Revert to idle immediately
+			is_dashing = false  
+			_set_animation("idle")  
 		return  
 
 	if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0:
@@ -87,7 +87,7 @@ func _start_dash():
 
 	print("Dashing!")
 
-# ---------------- Dash Trail Effect ----------------
+# ---------------- Dash trel Effect ----------------
 
 func _spawn_dash_trail():
 	var trail = AnimatedSprite2D.new()
@@ -97,7 +97,7 @@ func _spawn_dash_trail():
 	trail.flip_h = sprite_2d.flip_h  
 	trail.position = global_position  
 	trail.scale = sprite_2d.scale  
-	trail.modulate = Color(1, 1, 1, 0.6)  # Slight transparency
+	trail.modulate = Color(1, 1, 1, 0.6)  
 
 	# 🔥 Ensure clone is behind the player
 	trail.z_index = sprite_2d.z_index - .5
@@ -116,7 +116,7 @@ func _handle_gravity(delta):
 
 func _handle_movement():
 	if is_dashing:
-		return  # ⛔ Skip movement input while dashing
+		return  
 
 	var direction = Input.get_axis("left", "right")
 
@@ -143,6 +143,8 @@ func _flip_player(is_right: bool):
 	var idle_anim = "idle_right" if facing_right else "idle_left"
 	swordanim.play(idle_anim)
 
+# ---------------- fotstep ----------------
+
 func _handle_running_sound():
 	if is_on_floor() and velocity.x != 0 and not is_dashing:
 		if footstep_timer.is_stopped():
@@ -155,10 +157,11 @@ func _handle_running_sound():
 func _stop_running_sound():
 	footstep_timer.stop()
 	footsteps.stop()
-
 func _on_footsteptimer_timeout():
 	if is_on_floor() and velocity.x != 0 and not is_dashing:
 		footsteps.play()
+
+# ---------------- Jump & Landing ----------------
 
 func _handle_jump():
 	if Input.is_action_just_pressed("jump"):
@@ -198,18 +201,29 @@ func _handle_sword_swing():
 				sword_hit_sound.play()  
 				_apply_hitstop()
 
-
-# ---------------- Hit Effects ----------------
+# ---------------- Hit Effects  ----------------
 
 func _apply_hitstop():
-	Engine.time_scale = 0.02  # 🔥 Slow down instead of freezing
+	_character_flash()  
+
+	Engine.time_scale = 0.02  
 	await get_tree().create_timer(0.02).timeout  
 	Engine.time_scale = 1.0  
 
+func _character_flash():
+	sprite_2d.self_modulate = Color(2, 2, 2, 1) 
+	await get_tree().create_timer(0.05).timeout  
+	sprite_2d.self_modulate = Color(1, 1, 1, 1)  
 
-# ---------------- Signals & Collision Handling ----------------
+# ---------------- signal sh#t ----------------
 
 func _on_area_2d_area_entered(area):
 	area.queue_free()
 	sword_hit_sound.play()
 	_apply_hitstop()
+
+func _on_key_body_entered(body: Node2D) -> void:
+	$SecretRoomAudio.play()
+	$"../../key".queue_free()
+	$"../../StaticBody2D".queue_free()
+	print("debug open door epically")
