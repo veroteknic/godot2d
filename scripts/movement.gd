@@ -16,11 +16,11 @@ extends CharacterBody2D
 @onready var land_sound = $jumpland
 @onready var sword_miss_sound = $swordmiss
 @onready var sword_hit_sound = $swordhit
-@onready var camera = $"../Camera2D"  # 🔥 For screen shake
+@onready var camera = $"../Camera2D"
 @onready var dash_activate: AudioStreamPlayer2D = $DashActivate
 @onready var firstsheath: AudioStreamPlayer2D = $FirstTimeSheath
 
-# Movement variables
+# Movement sh#t
 var SPEED = 600
 var JUMP_VELOCITY = -905
 var DASH_SPEED = 1250
@@ -53,7 +53,7 @@ func _physics_process(delta):
 	_handle_sword_swing()
 	move_and_slide()
 
-# ---------------- Dash Mechanic ----------------
+# ---------------- Dash boi ----------------
 
 func _handle_dash(delta):
 	if dash_cooldown_timer > 0:
@@ -87,7 +87,7 @@ func _start_dash():
 
 	print("Dashing!")
 
-# ---------------- Dash Trail Effect ----------------
+# ---------------- Dash trel Effect ----------------
 
 func _spawn_dash_trail():
 	var trail = AnimatedSprite2D.new()
@@ -143,7 +143,7 @@ func _flip_player(is_right: bool):
 	var idle_anim = "idle_right" if facing_right else "idle_left"
 	swordanim.play(idle_anim)
 
-# ---------------- Footsteps (Unchanged) ----------------
+# ---------------- fotstep ----------------
 
 func _handle_running_sound():
 	if is_on_floor() and velocity.x != 0 and not is_dashing:
@@ -201,21 +201,21 @@ func _handle_sword_swing():
 				sword_hit_sound.play()  
 				_apply_hitstop()
 
-# ---------------- Hit Effects (🔥 White Flash Added) ----------------
+# ---------------- Hit Effects  ----------------
 
 func _apply_hitstop():
-	_character_flash()  # ✅ New function for white flash effect
+	_character_flash()  
 
 	Engine.time_scale = 0.02  
 	await get_tree().create_timer(0.02).timeout  
 	Engine.time_scale = 1.0  
 
 func _character_flash():
-	sprite_2d.self_modulate = Color(2, 2, 2, 1)  # ✅ White flash effect
+	sprite_2d.self_modulate = Color(2, 2, 2, 1) 
 	await get_tree().create_timer(0.05).timeout  
-	sprite_2d.self_modulate = Color(1, 1, 1, 1)  # ✅ Restore normal color
+	sprite_2d.self_modulate = Color(1, 1, 1, 1)  
 
-# ---------------- Signals & Collision Handling ----------------
+# ---------------- signal sh#t ----------------
 
 func _on_area_2d_area_entered(area):
 	area.queue_free()
@@ -226,3 +226,4 @@ func _on_key_body_entered(body: Node2D) -> void:
 	$SecretRoomAudio.play()
 	$"../../key".queue_free()
 	$"../../StaticBody2D".queue_free()
+	print("debug open door epically")

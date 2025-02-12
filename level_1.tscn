@@ -348,4 +348,10 @@ position = Vector2(5878, -834)
 [node name="enemy3" parent="." instance=ExtResource("10_gu3my")]
 position = Vector2(1935, 497)
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="body_entered" from="key" to="player/playerchar" method="_on_key_body_entered"]
