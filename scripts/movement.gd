@@ -221,6 +221,7 @@ func _on_area_2d_area_entered(area):
 	area.queue_free()
 	sword_hit_sound.play()
 	_apply_hitstop()
+#skibidi
 
 func _on_key_body_entered(body: Node2D) -> void:
 	$SecretRoomAudio.play()
