@@ -51,10 +51,9 @@ animations = [{
 script = ExtResource("1_ofgc4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ku0o6")
 animation = &"idle"
 autoplay = "idle"
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 
 [node name="FireTimer" type="Timer" parent="."]
