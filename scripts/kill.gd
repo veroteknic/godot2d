@@ -10,7 +10,7 @@ var player: CharacterBody2D
 
 func _ready():
 	Engine.time_scale = 1
-	player = get_parent().get_parent().get_parent().get_node("player")
+	player = get_parent().get_node("playerchar")
 
 func _on_body_entered(_body):
 	print_rich("[color=red]get rekt haha idiot[/color]")

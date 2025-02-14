@@ -225,8 +225,8 @@ func _on_area_2d_area_entered(area):
 
 func _on_key_body_entered(body: Node2D) -> void:
 	$SecretRoomAudio.play()
-	await $SecretRoomAudio.finished
-	$SecretRoomAudio.play()
 	$"../../key".queue_free()
 	$"../../StaticBody2D".queue_free()
 	print("debug open door epically")
+	await $SecretRoomAudio.finished
+	$SecretRoomAudio.play()
