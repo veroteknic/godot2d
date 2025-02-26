@@ -230,3 +230,4 @@ func _on_key_body_entered(body: Node2D) -> void:
 	print("debug open door epically")
 	await $SecretRoomAudio.finished
 	$SecretRoomAudio.play()
+	print("pluh")
