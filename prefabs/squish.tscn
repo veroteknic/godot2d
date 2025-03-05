@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bq2hue8exgvbj"]
 
-[ext_resource type="Script" path="res://prefabs/squish.gd" id="1_uakmw"]
+[ext_resource type="Script" uid="uid://cywppa1fgc12r" path="res://prefabs/squish.gd" id="1_uakmw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a1dj3"]
 height = 36.9501
