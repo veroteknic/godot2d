@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bsh38i5wab6e1"]
 
-[ext_resource type="Script" path="res://scripts/kill.gd" id="1_vcrqk"]
+[ext_resource type="Script" uid="uid://d4ciir34vgpvs" path="res://scripts/kill.gd" id="1_vcrqk"]
 [ext_resource type="AudioStream" uid="uid://c77c7668wlv8v" path="res://prefabs/hitHurt.wav" id="2_eaf27"]
 [ext_resource type="Texture2D" uid="uid://dpmwa1fspv6sx" path="res://prefabs/Cool Text - WASTED 469539974422495.png" id="3_f7q4k"]
 

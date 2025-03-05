@@ -14,14 +14,12 @@ func _ready():
 
 func _on_body_entered(_body):
 	print_rich("[color=red]get rekt haha idiot[/color]")
-
 	if player and is_instance_valid(player):
 		player.queue_free()  # ✅ Ensure player exists before deleting
 
 	# 🎇 Play Effects
 	cpu_particles_2d.emitting = true
 	audio_stream_player_2d.play()
-	
 	# 🕒 Slow motion effect
 	Engine.time_scale = 0.5  
 	
@@ -29,6 +27,6 @@ func _on_body_entered(_body):
 	timer.start()
 
 func _on_timer_timeout():
-	print("[color=yellow]Even more dead[/color]")
+	print_rich("[color=yellow]Even more dead[/color]")
 	Engine.time_scale = 1.0  # ✅ Restore normal game speed
 	get_tree().reload_current_scene()  # ✅ Restart the level

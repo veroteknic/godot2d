@@ -209,7 +209,7 @@ func _apply_hitstop():
 	Engine.time_scale = 0.02  
 	await get_tree().create_timer(0.02).timeout  
 	Engine.time_scale = 1.0  
-
+	print("debug time _character_flash()")
 func _character_flash():
 	sprite_2d.self_modulate = Color(2, 2, 2, 1) 
 	await get_tree().create_timer(0.05).timeout  
@@ -221,7 +221,8 @@ func _on_area_2d_area_entered(area):
 	area.queue_free()
 	sword_hit_sound.play()
 	_apply_hitstop()
-#skibidi
+	print("hitstop applied")
+#sskibidi
 
 func _on_key_body_entered(body: Node2D) -> void:
 	$SecretRoomAudio.play()

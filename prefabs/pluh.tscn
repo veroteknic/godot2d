@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://bthfkf70euphr"]
+
+[ext_resource type="Script" uid="uid://4tw8y5tgy831" path="res://prefabs/pluh.gd" id="1_7j6pa"]
+[ext_resource type="Texture2D" uid="uid://boeptr3jkuv2k" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_run_anim_f0.png" id="2_pffe4"]
+[ext_resource type="Texture2D" uid="uid://cbbrtkqicqwde" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_run_anim_f1.png" id="3_at48x"]
+[ext_resource type="Texture2D" uid="uid://dvt5a3g07bhgw" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_run_anim_f2.png" id="4_qx1qj"]
+[ext_resource type="Texture2D" uid="uid://bo5s4ad6ic1ba" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_run_anim_f3.png" id="5_s7x5q"]
+[ext_resource type="Texture2D" uid="uid://21imsd3uih5r" path="res://map/0x72_DungeonTilesetII_v1.7/chort_idle_anim_f0.png" id="6_kjowp"]
+[ext_resource type="Texture2D" uid="uid://foxvg5ai68qi" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_idle_anim_f1.png" id="7_rrgn3"]
+[ext_resource type="Texture2D" uid="uid://mmyrucagxfs5" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_idle_anim_f2.png" id="8_p5boi"]
+[ext_resource type="Texture2D" uid="uid://xjbhxxbqi7m2" path="res://map/0x72_DungeonTilesetII_v1.7/frames/chort_idle_anim_f3.png" id="9_yghgy"]
+[ext_resource type="PackedScene" uid="uid://bsh38i5wab6e1" path="res://prefabs/emenykill.tscn" id="10_2wjoq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4uw87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pffe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_at48x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qx1qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s7x5q")
+}],
+"loop": true,
+"name": &"chase",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_kjowp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rrgn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p5boi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yghgy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tarv1"]
+radius = 8.77096
+height = 29.4209
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvl23"]
+radius = 1.70589
+height = 4.80807
+
+[node name="lil goober" type="Area2D"]
+scale = Vector2(3.41, 3.41)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_7j6pa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-0.879765, 4.10557)
+scale = Vector2(3.845, 4.306)
+sprite_frames = SubResource("SpriteFrames_4uw87")
+animation = &"chase"
+autoplay = "chase"
+offset = Vector2(0, -2)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(-0.879764, 5.57185)
+rotation = -1.57079
+scale = Vector2(3.845, 4.306)
+target_position = Vector2(-0.0717297, 18.7683)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-0.879764, 5.5)
+rotation = 1.57079
+scale = Vector2(3.845, 4.306)
+target_position = Vector2(-0.22152, 17.8886)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.37091e-06, 3.81232)
+scale = Vector2(3.845, 4.306)
+shape = SubResource("CapsuleShape2D_tarv1")
+debug_color = Color(0.9528, 2.02149e-06, 0.556813, 0.42)
+
+[node name="emenykill" parent="." instance=ExtResource("10_2wjoq")]
+position = Vector2(-1.17302, 1.46628)
+scale = Vector2(3.845, 4.306)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="emenykill"]
+position = Vector2(0.457615, 0.340518)
+scale = Vector2(3.845, 4.306)
+shape = SubResource("CapsuleShape2D_hvl23")
