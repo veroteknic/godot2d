@@ -99,7 +99,7 @@ func _spawn_dash_trail():
 	trail.scale = sprite_2d.scale  
 	trail.modulate = Color(1, 1, 1, 0.6)  
 
-	# 🔥 Ensure clone is behind the player
+	
 	trail.z_index = sprite_2d.z_index - .5
 
 	get_parent().add_child(trail)  
@@ -222,7 +222,7 @@ func _on_area_2d_area_entered(area):
 	sword_hit_sound.play()
 	_apply_hitstop()
 	print("hitstop applied")
-#sskibidi
+#bskibidi
 
 func _on_key_body_entered(body: Node2D) -> void:
 	$SecretRoomAudio.play()
