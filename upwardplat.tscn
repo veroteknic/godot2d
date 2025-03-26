@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cqwc1l4ax4tqm"]
 
-[ext_resource type="Script" path="res://upwardplat.gd" id="1_75iqw"]
+[ext_resource type="Script" uid="uid://w8i2a7o2k35r" path="res://upwardplat.gd" id="1_75iqw"]
 [ext_resource type="Texture2D" uid="uid://d3ae66evybiqj" path="res://map/Free/Traps/Falling Platforms/On (32x10).png" id="2_vnny8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w60o2"]

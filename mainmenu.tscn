@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://nn2uhy4gfb8r"]
 
-[ext_resource type="Script" path="res://mainmenu.gd" id="1_0ox3x"]
+[ext_resource type="Script" uid="uid://b854iljrw2ld4" path="res://mainmenu.gd" id="1_0ox3x"]
 [ext_resource type="FontFile" uid="uid://gvdr5gr1htda" path="res://audio folder/sfx/BauhausBold.ttf" id="1_nkgyj"]
 [ext_resource type="Texture2D" uid="uid://dbm2lhf1j2oos" path="res://audio folder/sfx/istockphoto-513921039-612x612.jpg" id="3_mk55u"]
 [ext_resource type="Texture2D" uid="uid://b23gv327pta3x" path="res://audio folder/sfx/cooltext465954749140469.png" id="4_4w0hl"]

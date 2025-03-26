@@ -1,6 +1,6 @@
 [gd_scene load_steps=52 format=4 uid="uid://bby1ylfwufa30"]
 
-[ext_resource type="Script" path="res://scripts/movement.gd" id="1_t80c4"]
+[ext_resource type="Script" uid="uid://c6ggre5j4dmbe" path="res://scripts/movement.gd" id="1_t80c4"]
 [ext_resource type="Texture2D" uid="uid://bie8t2gscme1f" path="res://map/0x72_DungeonTilesetII_v1.7/frames/knight_f_hit_anim_f0.png" id="2_mtadk"]
 [ext_resource type="Texture2D" uid="uid://bermxj2i8yml8" path="res://map/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f0.png" id="3_nqop6"]
 [ext_resource type="Texture2D" uid="uid://c570kh8anefvn" path="res://map/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f1.png" id="4_xdcqy"]
@@ -31,6 +31,15 @@
 [ext_resource type="AudioStream" uid="uid://dpiq4riv312k2" path="res://musicc/449552__aleks41__sword-from-sheath.wav" id="29_cayd7"]
 [ext_resource type="AudioStream" uid="uid://c7d0wrklh0d48" path="res://musicc/06_door_close_1.mp3" id="30_6won0"]
 [ext_resource type="AudioStream" uid="uid://dtx25wul8cip5" path="res://musicc/06_door_close_2.mp3" id="31_q56pt"]
+
+[sub_resource type="Curve" id="Curve_wjbm1"]
+_data = [Vector2(0.00558659, 1), 0.0, 0.0, 0, 0, Vector2(0.924581, 0.200238), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_km2ka"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_sy7pr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2k0ut"]
 animations = [{
@@ -121,6 +130,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(-90.5, 48)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("swordie:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-26, 65)]
+}
 
 [sub_resource type="Animation" id="Animation_yp2bi"]
 resource_name = "idle_left"
@@ -134,7 +155,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-1.5708]
+"values": [-0.349066]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -147,6 +168,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-91, 48)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("swordie:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-26, 65)]
 }
 
 [sub_resource type="Animation" id="Animation_4bd2a"]
@@ -161,7 +194,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.5708]
+"values": [0.349066]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -175,6 +208,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(91, 48)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("swordie:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(23, 65)]
+}
 
 [sub_resource type="Animation" id="Animation_mqxrj"]
 resource_name = "slash"
@@ -185,10 +230,10 @@ tracks/0/path = NodePath("swordie:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.266667, 0.466667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0311613, 0.901219),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [1.5708, 0.207591, 2.0944, 1.5708]
+"values": [0.349066, 2.0944, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -197,7 +242,7 @@ tracks/1/path = NodePath("Area2D/CollisionShape2D2:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.3, 0.333333),
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.166667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [true, false, false, true]
@@ -224,10 +269,10 @@ tracks/0/path = NodePath("swordie:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.3, 0.533333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0549892, 0.794852),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [-1.5708, -0.207694, -2.0944, -1.5708]
+"values": [-0.349066, -2.0944, -0.349066]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -253,24 +298,27 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(-50, 38)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("swordie:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-27, 65)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8knj3"]
 _data = {
-"RESET": SubResource("Animation_8kdyh"),
-"idle_left": SubResource("Animation_yp2bi"),
-"idle_right": SubResource("Animation_4bd2a"),
-"slash": SubResource("Animation_mqxrj"),
-"slash_left": SubResource("Animation_e7rnq")
+&"RESET": SubResource("Animation_8kdyh"),
+&"idle_left": SubResource("Animation_yp2bi"),
+&"idle_right": SubResource("Animation_4bd2a"),
+&"slash": SubResource("Animation_mqxrj"),
+&"slash_left": SubResource("Animation_e7rnq")
 }
-
-[sub_resource type="Curve" id="Curve_wjbm1"]
-_data = [Vector2(0.00558659, 1), 0.0, 0.0, 0, 0, Vector2(0.924581, 0.200238), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_km2ka"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="Gradient" id="Gradient_sy7pr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a8tx"]
 size = Vector2(80.5, 26)
@@ -319,38 +367,9 @@ collision_layer = 11
 collision_mask = 3
 script = ExtResource("1_t80c4")
 
-[node name="player" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-scale = Vector2(6, 6.28571)
-sprite_frames = SubResource("SpriteFrames_2k0ut")
-animation = &"running"
-autoplay = "idle"
-frame_progress = 0.729394
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 38)
-shape = SubResource("RectangleShape2D_nuilh")
-
-[node name="killtimer" type="Timer" parent="."]
-wait_time = 3.45
-one_shot = true
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamMP3_nnj66")
-
-[node name="sprint" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
-[node name="swordanim" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_8knj3")
-}
-autoplay = "idle_right"
-
 [node name="swordie" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(12, 49)
+position = Vector2(-26, 65)
 rotation = 0.207591
 scale = Vector2(4.16305, 4.2342)
 texture = ExtResource("12_i7ps5")
@@ -371,6 +390,35 @@ scale_amount_curve = SubResource("Curve_wjbm1")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_km2ka")
 color_initial_ramp = SubResource("Gradient_sy7pr")
+
+[node name="player" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(6, 6.28571)
+sprite_frames = SubResource("SpriteFrames_2k0ut")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.572136
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 38)
+shape = SubResource("RectangleShape2D_nuilh")
+
+[node name="killtimer" type="Timer" parent="."]
+wait_time = 3.45
+one_shot = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMP3_nnj66")
+
+[node name="sprint" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="swordanim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8knj3")
+}
+autoplay = "idle_right"
 
 [node name="kill" type="CPUParticles2D" parent="."]
 emitting = false

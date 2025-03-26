@@ -2,6 +2,9 @@ extends Area2D
 
 @onready var audio_stream_player = $AudioStreamPlayer
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var gamemanager: Node = %gamemanager
+
+
 
 
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dd8paf7s2h8lk"]
 
-[ext_resource type="Script" path="res://options.gd" id="1_r5joc"]
+[ext_resource type="Script" uid="uid://bds4brg1c7rng" path="res://options.gd" id="1_r5joc"]
 [ext_resource type="FontFile" uid="uid://gvdr5gr1htda" path="res://audio folder/sfx/BauhausBold.ttf" id="2_6jcix"]
 
 [node name="options" type="Control"]

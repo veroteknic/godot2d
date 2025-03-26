@@ -30,8 +30,7 @@ animations = [{
 size = Vector2(282, 192)
 
 [sub_resource type="Curve" id="Curve_3cvus"]
-min_value = -200.0
-max_value = 200.0
+_limits = [-200.0, 200.0, 0.0, 1.0]
 _data = [Vector2(0.0949721, 30.7839), 0.0, 0.0, 0, 0, Vector2(1, -65.5582), 0.0, 0.0, 0, 0]
 point_count = 2
 
