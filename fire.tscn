@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://crfeuqtw8df0o"]
+
+[ext_resource type="Texture2D" uid="uid://dyn7k34tdlfaa" path="res://addons/kenney_particle_pack/spark_01.png" id="1_x6ecg"]
+[ext_resource type="Texture2D" uid="uid://n385rmt0l3lk" path="res://addons/kenney_particle_pack/smoke_01.png" id="2_icfi2"]
+[ext_resource type="Texture2D" uid="uid://cf1jbny0klxxl" path="res://addons/kenney_particle_pack/fire_01.png" id="3_eo6dx"]
+
+[sub_resource type="Gradient" id="Gradient_r2yji"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0.841066, 0.805448, 1)
+
+[sub_resource type="Gradient" id="Gradient_qjybw"]
+offsets = PackedFloat32Array(0.88)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_f37y5"]
+offsets = PackedFloat32Array(0, 0.693333, 0.88)
+colors = PackedColorArray(0.870096, 0.17204, 0, 1, 1, 0.368627, 0, 1, 1, 0.368627, 0, 0)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(-14, -129)
+rotation = -1.8322
+texture = ExtResource("1_x6ecg")
+lifetime = 0.25
+emission_shape = 1
+emission_sphere_radius = 14.35
+gravity = Vector2(0, -980)
+initial_velocity_max = 800.0
+angular_velocity_max = 100.0
+linear_accel_max = 100.0
+radial_accel_max = 100.0
+tangential_accel_max = 100.0
+damping_max = 100.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_r2yji")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+anim_speed_max = 128.0
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+position = Vector2(-5.96046e-07, -174)
+rotation = 1.77131
+amount = 7
+texture = ExtResource("2_icfi2")
+lifetime = 1.25
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(90, 0)
+spread = 50.0
+gravity = Vector2(0, -980)
+initial_velocity_max = 1.0
+angular_velocity_max = 100.0
+linear_accel_max = 100.0
+radial_accel_max = 100.0
+tangential_accel_max = 100.0
+damping_max = 100.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.5
+scale_amount_max = 0.7
+color_ramp = SubResource("Gradient_qjybw")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+anim_speed_max = 128.0
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+rotation = 1.77131
+texture = ExtResource("3_eo6dx")
+speed_scale = 2.75
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(90, 0)
+spread = 50.0
+gravity = Vector2(0, -980)
+initial_velocity_max = 100.0
+angular_velocity_max = 100.0
+linear_accel_max = 100.0
+radial_accel_max = 100.0
+tangential_accel_max = 100.0
+damping_max = 100.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.5
+scale_amount_max = 0.7
+color_ramp = SubResource("Gradient_f37y5")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+anim_speed_max = 128.0
+anim_offset_max = 1.0

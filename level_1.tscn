@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c1eodwqq30crg"]
+[gd_scene load_steps=22 format=4 uid="uid://c1eodwqq30crg"]
 
 [ext_resource type="Texture2D" uid="uid://dtsasvqj5w1bh" path="res://Dungeon Tile Set/Dungeon Tile Set.png" id="1_ranxs"]
 [ext_resource type="PackedScene" uid="uid://bby1ylfwufa30" path="res://prefabs/player.tscn" id="2_4xd3l"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://rufmjermie0f" path="res://prefabs/icon.svg" id="10_2moxx"]
 [ext_resource type="PackedScene" uid="uid://ba8jrabottlkk" path="res://prefabs/chort.tscn" id="10_gu3my"]
 [ext_resource type="PackedScene" uid="uid://beuxaptf6kfco" path="res://prefabs/coin.tscn" id="11_ro24d"]
+[ext_resource type="PackedScene" uid="uid://buqyte6o6cbdd" path="res://shop.tscn" id="11_sof0w"]
+[ext_resource type="Script" uid="uid://bncv65spncdmp" path="res://scripts/game_manager.gd" id="14_ggavl"]
+[ext_resource type="PackedScene" uid="uid://crfeuqtw8df0o" path="res://fire.tscn" id="15_ubhxj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqbft"]
 texture = ExtResource("1_ranxs")
@@ -365,4 +368,82 @@ tile_set = SubResource("TileSet_ob88l")
 [node name="enemy" parent="." instance=ExtResource("9_ahkj7")]
 position = Vector2(8329, 1389)
 
+[node name="Node2D" parent="." instance=ExtResource("11_sof0w")]
+position = Vector2(3734, -471)
+scale = Vector2(2.2, 2.2)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="gamemanager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("14_ggavl")
+
+[node name="Node2D2" parent="." instance=ExtResource("15_ubhxj")]
+position = Vector2(155, 87)
+scale = Vector2(0.5, 0.5)
+
 [connection signal="body_entered" from="key" to="player/playerchar" method="_on_key_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/coin" to="coins/coinmaplayer/coin" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28479" to="coins/coinmaplayer/@Area2D@28479" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28480" to="coins/coinmaplayer/@Area2D@28480" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28481" to="coins/coinmaplayer/@Area2D@28481" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28482" to="coins/coinmaplayer/@Area2D@28482" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28483" to="coins/coinmaplayer/@Area2D@28483" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28484" to="coins/coinmaplayer/@Area2D@28484" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28485" to="coins/coinmaplayer/@Area2D@28485" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28486" to="coins/coinmaplayer/@Area2D@28486" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28487" to="coins/coinmaplayer/@Area2D@28487" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28488" to="coins/coinmaplayer/@Area2D@28488" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28489" to="coins/coinmaplayer/@Area2D@28489" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28490" to="coins/coinmaplayer/@Area2D@28490" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28491" to="coins/coinmaplayer/@Area2D@28491" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28492" to="coins/coinmaplayer/@Area2D@28492" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28493" to="coins/coinmaplayer/@Area2D@28493" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28494" to="coins/coinmaplayer/@Area2D@28494" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28495" to="coins/coinmaplayer/@Area2D@28495" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28496" to="coins/coinmaplayer/@Area2D@28496" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28497" to="coins/coinmaplayer/@Area2D@28497" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28498" to="coins/coinmaplayer/@Area2D@28498" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28499" to="coins/coinmaplayer/@Area2D@28499" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28500" to="coins/coinmaplayer/@Area2D@28500" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28501" to="coins/coinmaplayer/@Area2D@28501" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28502" to="coins/coinmaplayer/@Area2D@28502" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28503" to="coins/coinmaplayer/@Area2D@28503" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28504" to="coins/coinmaplayer/@Area2D@28504" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28505" to="coins/coinmaplayer/@Area2D@28505" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28506" to="coins/coinmaplayer/@Area2D@28506" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28507" to="coins/coinmaplayer/@Area2D@28507" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28508" to="coins/coinmaplayer/@Area2D@28508" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28509" to="coins/coinmaplayer/@Area2D@28509" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28510" to="coins/coinmaplayer/@Area2D@28510" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28511" to="coins/coinmaplayer/@Area2D@28511" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28512" to="coins/coinmaplayer/@Area2D@28512" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28513" to="coins/coinmaplayer/@Area2D@28513" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28514" to="coins/coinmaplayer/@Area2D@28514" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28515" to="coins/coinmaplayer/@Area2D@28515" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28516" to="coins/coinmaplayer/@Area2D@28516" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28517" to="coins/coinmaplayer/@Area2D@28517" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28518" to="coins/coinmaplayer/@Area2D@28518" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28519" to="coins/coinmaplayer/@Area2D@28519" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28520" to="coins/coinmaplayer/@Area2D@28520" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28521" to="coins/coinmaplayer/@Area2D@28521" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28522" to="coins/coinmaplayer/@Area2D@28522" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28523" to="coins/coinmaplayer/@Area2D@28523" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28524" to="coins/coinmaplayer/@Area2D@28524" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28525" to="coins/coinmaplayer/@Area2D@28525" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28526" to="coins/coinmaplayer/@Area2D@28526" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28527" to="coins/coinmaplayer/@Area2D@28527" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28528" to="coins/coinmaplayer/@Area2D@28528" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28529" to="coins/coinmaplayer/@Area2D@28529" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28530" to="coins/coinmaplayer/@Area2D@28530" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28531" to="coins/coinmaplayer/@Area2D@28531" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28532" to="coins/coinmaplayer/@Area2D@28532" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28533" to="coins/coinmaplayer/@Area2D@28533" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28534" to="coins/coinmaplayer/@Area2D@28534" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28535" to="coins/coinmaplayer/@Area2D@28535" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28536" to="coins/coinmaplayer/@Area2D@28536" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28537" to="coins/coinmaplayer/@Area2D@28537" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28538" to="coins/coinmaplayer/@Area2D@28538" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/coinmaplayer/@Area2D@28539" to="coins/coinmaplayer/@Area2D@28539" method="_on_body_entered"]
