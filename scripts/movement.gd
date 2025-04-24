@@ -85,7 +85,6 @@ func _start_dash():
 	var dash_direction = 1 if facing_right else -1
 	velocity.x = dash_direction * DASH_SPEED  
 
-	print("Dashing!")
 
 # ---------------- Dash trel Effect ----------------
 
@@ -177,7 +176,6 @@ func _handle_landing():
 	if is_on_floor():
 		if was_in_air:
 			land_sound.play()
-			print("Landed!")
 		was_in_air = false
 		double_jump_used = false  
 	else:
@@ -192,7 +190,6 @@ func _set_animation(state: String):
 
 func _handle_sword_swing():
 	if Input.is_action_just_pressed("swing"):
-		print("Swing!")
 		var swing_anim = "slash" if facing_right else "slash_left"
 		if swordanim.current_animation != swing_anim or not swordanim.is_playing():
 			swordanim.play(swing_anim)  
@@ -209,7 +206,6 @@ func _apply_hitstop():
 	Engine.time_scale = 0.02  
 	await get_tree().create_timer(0.02).timeout  
 	Engine.time_scale = 1.0  
-	print("debug time _character_flash()")
 func _character_flash():
 	sprite_2d.self_modulate = Color(2, 2, 2, 1) 
 	await get_tree().create_timer(0.05).timeout  
@@ -221,14 +217,10 @@ func _on_area_2d_area_entered(area):
 	area.queue_free()
 	sword_hit_sound.play()
 	_apply_hitstop()
-	print("hitstop applied")
-#bskibidi
 
 func _on_key_body_entered(body: Node2D) -> void:
 	$SecretRoomAudio.play()
 	$"../../key".queue_free()
 	$"../../StaticBody2D".queue_free()
-	print("debug open door epically")
 	await $SecretRoomAudio.finished
 	$SecretRoomAudio.play()
-	print("pluh")

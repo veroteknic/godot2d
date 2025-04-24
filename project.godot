@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="KNIGHTPLATFORMER"
-run/main_scene="res://mainmenu.tscn"
+run/main_scene="uid://dlk26dl8kc6yw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0.215686, 0.239216, 0.286275, 1)
 config/icon="res://prefabs/icon.svg"
@@ -23,6 +23,10 @@ buses/default_bus_layout="res://audio folder/default_bus_layout.tres"
 [autoload]
 
 Globalkeyactivate="*res://globalkeyactivate.gd"
+SceneLoader="*res://addons/maaacks_scene_loader/base/scenes/autoloads/scene_loader.tscn"
+AppConfig="*res://addons/maaacks_menus_template/base/scenes/autoloads/app_config.tscn"
+ProjectMusicController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_music_controller.tscn"
+ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
 
 [display]
 
@@ -32,7 +36,11 @@ window/size/always_on_top=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/health_hitbox_hurtbox/plugin.cfg")
+enabled=PackedStringArray("res://addons/health_hitbox_hurtbox/plugin.cfg", "res://addons/maaacks_menus_template/plugin.cfg", "res://addons/maaacks_scene_loader/plugin.cfg")
+
+[gui]
+
+theme/custom="res://scenes/resources/themes/lore.tres"
 
 [input]
 
@@ -70,6 +78,15 @@ sprint={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://addons/maaacks_menus_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_menus_template/base/translations/menus_translations.fr.translation")
+
+[maaacks_menus_template]
+
+disable_plugin_dialogues=true
+copy_path="res://scenes"
 
 [physics]
 

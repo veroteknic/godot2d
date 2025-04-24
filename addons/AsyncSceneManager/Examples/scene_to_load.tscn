@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqojfek3b58la"]
+
+[ext_resource type="PackedScene" uid="uid://c1eodwqq30crg" path="res://level_1.tscn" id="1_hbobf"]
+
+[node name="scene_to_load" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_top = 289.0
+offset_right = 700.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 191
+text = "Scene 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level1" parent="." instance=ExtResource("1_hbobf")]

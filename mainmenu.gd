@@ -15,7 +15,6 @@ func _process(delta):
 
 func _on_start_pressed():
 	audio_stream_player.play()
-	get_tree().change_scene_to_file("res://level_1.tscn")
 
 
 func _on_quit_pressed():

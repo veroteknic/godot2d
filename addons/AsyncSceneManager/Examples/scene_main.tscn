@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca76hnnn8ums7"]
+
+[ext_resource type="Script" uid="uid://bexrlthc7bedn" path="res://addons/AsyncSceneManager/Examples/SceneChanging.gd" id="1_bldvc"]
+
+[node name="scene_main" type="Node2D"]
+script = ExtResource("1_bldvc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_left = 721.0
+offset_top = 441.0
+offset_right = 1152.0
+offset_bottom = 649.0
+text = "loadin... wait a moment......
+"

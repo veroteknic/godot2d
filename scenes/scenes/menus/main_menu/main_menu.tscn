@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpy5rrfkeid2u"]
+
+[ext_resource type="PackedScene" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/main_menu.tscn" id="1_557p1"]
+[ext_resource type="Script" path="res://scenes/scenes/menus/main_menu/main_menu.gd" id="2_wwoqg"]
+[ext_resource type="PackedScene" path="res://scenes/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="3_n1pnu"]
+[ext_resource type="PackedScene" path="res://scenes/scenes/credits/credits.tscn" id="4_0emlv"]
+
+[node name="MainMenu" instance=ExtResource("1_557p1")]
+script = ExtResource("2_wwoqg")
+options_packed_scene = ExtResource("3_n1pnu")
+credits_packed_scene = ExtResource("4_0emlv")
+
+[node name="BackgroundMusicPlayer" parent="." index="1"]
+bus = &"Master"
+
+[node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
+text = "KNIGHTPLATFORMER"
