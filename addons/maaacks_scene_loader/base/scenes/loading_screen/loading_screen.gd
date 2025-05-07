@@ -1,10 +1,10 @@
-class_name LoadingScreen
+class_name LoadingScreeE
 extends CanvasLayer
 
 const STALLED_ON_WEB = "\nIf running in a browser, try clicking out of the window, \nand then click back into the window. It might unstick.\nLasty, you may try refreshing the page.\n\n"
 
 enum StallStage{STARTED, WAITING, STILL_WAITING, GIVE_UP}
-
+#nice
 @export_range(5, 60, 0.5, "or_greater") var state_change_delay : float = 15.0
 @export_group("State Messages")
 @export_subgroup("In Progress")

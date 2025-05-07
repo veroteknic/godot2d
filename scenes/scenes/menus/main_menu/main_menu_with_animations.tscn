@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dlk26dl8kc6yw"]
+[gd_scene load_steps=19 format=3 uid="uid://dlk26dl8kc6yw"]
 
 [ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/main_menu.tscn" id="1_my8ii"]
 [ext_resource type="Script" uid="uid://bm7e00vghiaum" path="res://scenes/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_nyjay"]
 [ext_resource type="PackedScene" uid="uid://dxp553dwk1gi2" path="res://scenes/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="3_f368h"]
 [ext_resource type="PackedScene" uid="uid://ba3sf6onuag05" path="res://scenes/scenes/credits/credits.tscn" id="4_85otm"]
+[ext_resource type="AudioStream" uid="uid://bldwsijhn8slw" path="res://audio folder/01. Dead Cells.mp3" id="5_nyjay"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -350,6 +351,8 @@ transitions = ["Intro", "OpenMainMenu", SubResource("11"), "OpenMainMenu", "Open
 graph_offset = Vector2(-180.277, 49)
 
 [node name="MainMenu" instance=ExtResource("1_my8ii")]
+offset_left = -1.0
+offset_right = -1.0
 script = ExtResource("2_nyjay")
 game_scene_path = "uid://c1eodwqq30crg"
 options_packed_scene = ExtResource("3_f368h")
@@ -364,6 +367,9 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
+
+[node name="BackgroundMusicPlayer" parent="." index="3"]
+stream = ExtResource("5_nyjay")
 
 [node name="VersionContainer" parent="VersionMargin" index="0"]
 modulate = Color(1, 1, 1, 0)

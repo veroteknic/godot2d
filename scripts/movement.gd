@@ -43,7 +43,10 @@ var dash_cooldown_timer = 0.0
 func _ready():
 	Engine.time_scale = 1
 	firstsheath.play()
-
+	$"../../TileMapLayer2".visible = false
+	$"../../TileMapLayer2".collision_enabled = false
+	$"../../TileMapLayer3".visible = false
+	$"../../TileMapLayer3".collision_enabled = false
 func _physics_process(delta):
 	_handle_gravity(delta)
 	_handle_dash(delta)
@@ -224,3 +227,11 @@ func _on_key_body_entered(body: Node2D) -> void:
 	$"../../StaticBody2D".queue_free()
 	await $SecretRoomAudio.finished
 	$SecretRoomAudio.play()
+
+
+func _on_door_lock_trigger_body_entered(body: CharacterBody2D) -> void:
+	$"../../TileMapLayer2".collision_enabled = true
+	$"../../TileMapLayer2".visible = true
+	$"../../TileMapLayer3".collision_enabled = true
+	$"../../TileMapLayer3".visible = true
+	

@@ -22,7 +22,7 @@ buses/default_bus_layout="res://audio folder/default_bus_layout.tres"
 
 [autoload]
 
-Globalkeyactivate="*res://globalkeyactivate.gd"
+Globalkeyactivate="res://globalkeyactivate.gd"
 SceneLoader="*res://addons/maaacks_scene_loader/base/scenes/autoloads/scene_loader.tscn"
 AppConfig="*res://addons/maaacks_menus_template/base/scenes/autoloads/app_config.tscn"
 ProjectMusicController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_music_controller.tscn"

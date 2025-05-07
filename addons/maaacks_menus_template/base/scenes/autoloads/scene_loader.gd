@@ -1,4 +1,4 @@
-class_name SceneLoaderClass
+class_name SceneLoaderClas
 extends Node
 ## Autoload class for loading scenes with an optional loading screen.
 

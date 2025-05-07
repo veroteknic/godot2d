@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bldwsijhn8slw"
+path="res://.godot/imported/01. Dead Cells.mp3-3927a84653f207b541de38a60f96832e.mp3str"
+
+[deps]
+
+source_file="res://audio folder/01. Dead Cells.mp3"
+dest_files=["res://.godot/imported/01. Dead Cells.mp3-3927a84653f207b541de38a60f96832e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

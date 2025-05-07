@@ -72,16 +72,16 @@ autoplay = "chase"
 offset = Vector2(0, -2)
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2(-0.879764, 5.57185)
+position = Vector2(0.58651, 27.8592)
 rotation = -1.57079
 scale = Vector2(3.845, 4.306)
-target_position = Vector2(-0.0717297, 18.7683)
+target_position = Vector2(-0.457561, 7.69574)
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(-0.879764, 5.5)
+position = Vector2(0.58651, 28.1525)
 rotation = 1.57079
 scale = Vector2(3.845, 4.306)
-target_position = Vector2(-0.22152, 17.8886)
+target_position = Vector2(0.0762105, 8.30867)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.37091e-06, 3.81232)
